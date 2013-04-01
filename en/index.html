@@ -72,9 +72,10 @@ I believe you have done this part, but I&#39;d like to repeat myself.</p>
     export NODE_PATH=/usr/local/share/npm/lib/node_modules</pre><h2 id="commands">Commands</h2><p>spm comes with some built-in commands, and it can be extended by plugins. Show the help screen with:</p>
 <pre>$ spm -h</pre><p>or:</p>
 <pre>$ spm help</pre><p>You can get more help information of a sub-command by:</p>
-<pre>$ spm build -h</pre><p>or:</p>
-<pre>$ spm help build</pre><p>Want to write your own plugin? Checkout the <a href="./plugin">plugin</a> section.</p>
-<h2 id="build">Build</h2><p>Build is a <strong>transport</strong> process, it is not a code to binary process.</p>
+<pre>$ spm install -h</pre><p>or:</p>
+<pre>$ spm help install</pre><p>Want to write your own plugin? Checkout the <a href="./plugin">plugin</a> section.</p>
+<h2 id="build">Build</h2><p>Build is a <strong>transport</strong> process, it is not a code to binary process. <a href="https://github.com/spmjs/grunt-spm-build">grunt-spm-build</a> is the built-in building engine. If you have any trouble, create an issute at <a href="https://github.com/spmjs/grunt-spm-build">grunt-spm-build</a>.</p>
+<p><strong>NEVER CREATE A BUILD ISSUE IN SPM2, CREATE IT IN GRUNT-SPM-BUILD</strong>.</p>
 <p>For example, we have a package <strong>hello</strong>:</p>
 <pre>package.json
 src/
