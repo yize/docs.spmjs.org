@@ -1,6 +1,6 @@
 # spm
 
-- pubdate: 2013-03-20
+- pubdate: 2013-04-25
 - index: 0
 
 spm is a static package manager, it's **not a build tools**.
@@ -85,13 +85,24 @@ Want to write your own plugin? Checkout the [plugin](./plugin.md) section.
 
 ## Build
 
-Build is a **transport** process, it is not a code to binary process. [grunt-spm-build][] is the built-in building engine. If you have any trouble, create an issute at [grunt-spm-build][].
+Since spm is not a build tools, it has no built-in **build** function.
+When you installed spm, you get everything to communicate with https://spmjs.org .
 
-**NEVER CREATE A BUILD ISSUE IN SPM2, CREATE IT IN GRUNT-SPM-BUILD**.
+If you want to publish your package to https://spmjs.org , your package should contain:
 
-[grunt-spm-build]: https://github.com/spmjs/grunt-spm-build
+    package.json
+    dist/
 
-For example, we have a package **hello**:
+1. A package.json that contains every information we need
+2. a dist directory that contains compiled module files
+
+If you are writing a standard module, you can get `spm-build`:
+
+```
+$ npm install spm-build -g
+```
+
+Let's have an example:
 
 ```
 package.json
@@ -150,7 +161,7 @@ dist/
     hello-debug.js
 ```
 
-Get more information on [build](./build.md).
+And now we can publish it to https://spmjs.org . Get more information on [build](./build.md).
 
 
 ## Install
