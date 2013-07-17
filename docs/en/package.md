@@ -30,26 +30,10 @@ Here is an example of `package.json`:
         "alias": {
             "class": "arale/class/1.0.0/class",
             "events": "arale/events/1.0.0/events"
-        },
-        "devAlias": {
-            "mocha" "gallery/mocha/1.0.0/mocha",
-            "expect" "gallery/expect/1.0.0/expect"
-        },
-        "engines": {
-            "seajs": "seajs/seajs/1.2.0/sea.js"
-        },
-        "platforms": {
-            "ie": [6, 7],
-            "firefox": ["13"],
-            "chrome": [20]
         }
     }
 }
 ```
-
-Platforms can be an array:
-
-    "platforms": ["ie/6", "chrome/20", "firefox"]
 
 
 ## family
