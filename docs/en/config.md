@@ -59,3 +59,10 @@ url = http://spmjs.alipay.com
 When you `info`, `search`, `login`, `install`, `publish`, you can set the source in your command line:
 
     $ spm info -s alipay jquery
+
+If you are behide a firewall, you need proxy:
+
+```ini
+[source:default]
+proxy = username:password@proxy.server:port
+```
