@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="generator" content="nico 0.4.2">
+    <meta name="generator" content="nico 0.4.4">
     <meta name="theme" content="spm 0.1">
     <title>Config</title>
     <link rel="stylesheet" href="../static/one.css" />
@@ -73,7 +73,11 @@
 </code></pre></div>
 <p>When you <code>info</code>, <code>search</code>, <code>login</code>, <code>install</code>, <code>publish</code>, you can set the source in your command line:</p>
 <pre>$ spm info -s alipay jquery
-</pre></div>
+</pre>
+<p>If you are behide a firewall, you need proxy:</p>
+<div class="highlight"><pre><code class="ini"><span class="title">[source:default]</span>
+<span class="setting">proxy = <span class="value">username:password@proxy.server:port</span></span>
+</code></pre></div></div>
   <div class="entry-meta">
     <time class="updated" datetime="2013-02-27T00:00:00.000Z">2013-02-27</time>
   </div>
@@ -93,7 +97,7 @@
 
     </div>
     <div class="footer">
-      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.4.2</p>
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.4.4</p>
     </div>
     <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../static/one.js"></script>
     <div class="github"><a class="github-link" href="https://github.com/spmjs/spm2">Fork me on GitHub</a></div>
