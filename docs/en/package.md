@@ -162,6 +162,15 @@ You should define your output as:
 }
 ```
 
+## spm.include
+
+This means the build strategy, options for include:
+
+- relative: this is the default value, include relative dependencies
+- all: include all dependencies
+- self: include only my self
+
+
 ## Old Time
 
 1. `root` is deprecated, use `family` instead.
