@@ -37,7 +37,7 @@
   <h1 class="entry-title">package.json</h1>
   <div class="entry-toc">
     <h3>Table of Contents</h3>
-    <ul><li><a href="#family">family</a></li><li><a href="#name">name</a></li><li><a href="#version">version</a></li><li><a href="#description">description</a></li><li><a href="#keywords">keywords</a></li><li><a href="#homepage">homepage</a></li><li><a href="#repository">repository</a></li><li><a href="#private">private</a></li><li><a href="#spm-alias">spm.alias</a></li><li><a href="#spm-output">spm.output</a><ul><li><a href="#single-file">Single File</a></li><li><a href="#glob-pattern">Glob Pattern</a></li></ul></li><li><a href="#old-time">Old Time</a></li></ul>
+    <ul><li><a href="#family">family</a></li><li><a href="#name">name</a></li><li><a href="#version">version</a></li><li><a href="#description">description</a></li><li><a href="#keywords">keywords</a></li><li><a href="#homepage">homepage</a></li><li><a href="#repository">repository</a></li><li><a href="#private">private</a></li><li><a href="#spm-alias">spm.alias</a></li><li><a href="#spm-output">spm.output</a><ul><li><a href="#single-file">Single File</a></li><li><a href="#glob-pattern">Glob Pattern</a></li></ul></li><li><a href="#spm-include">spm.include</a></li><li><a href="#old-time">Old Time</a></li></ul>
   </div>
 
   <div class="entry-content"><p>spm follows the <a href="https://github.com/spmjs/specification">Common Module Definition</a> packaging standards, compatible with nodejs&#39; package.json.</p>
@@ -145,7 +145,15 @@ src&#47;
 <div class="highlight"><pre><code class="javascript">{
     <span class="string">"output"</span>: [<span class="string">"i18n/**/*"</span>]
 }
-</code></pre></div><h2 id="old-time">Old Time</h2>
+</code></pre></div><h2 id="spm-include">spm.include</h2>
+<p>This means the build strategy, options for include:</p>
+
+<ul>
+<li>relative: this is the default value, include relative dependencies</li>
+<li>all: include all dependencies</li>
+<li>self: include only my self</li>
+</ul>
+<h2 id="old-time">Old Time</h2>
 <ol>
 <li><code>root</code> is deprecated, use <code>family</code> instead.</li>
 <li><code>dependencies</code> is deprecated, use <code>spm.alias</code> instead.</li>
