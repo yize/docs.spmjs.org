@@ -1,7 +1,7 @@
 # spm-config
 
-- pubdate: 2013-02-23
-- index: 2
+- pubdate: 2013-08-07
+- index: 1
 
 -----------
 
