@@ -3,23 +3,55 @@
 - pubdate: 2013-02-23
 - index: 2
 
-configuration of spm
-
 -----------
 
-## SYNOPSIS
+## 安装
 
 ```
-spm config [...]
+npm install spm -g
 ```
 
+## 使用说明
 
-## DESCRIPTION
+`spm config` 为 spm 的配置项，可供 spm 以及插件使用。这个命令是在操作 `~/.spm/spmrc` 这个文件，可查看 [spmrc 的规范]()。
 
+### 添加配置
 
-## OPTIONS
+```
+spm config user.username popomore
+```
 
+生成的配置为
 
-## FILES
+```
+[user]
+username = popomore
+```
 
-- ~/.spm/spmrc
+可以生成多级的配置
+
+```
+spm config source:alipay.url http://yuan.alipay.im
+```
+
+生成的配置为，`source:alipay` 为一个 section
+
+```
+[source:alipay]
+url = http://yuan.alipay.im
+```
+
+### 删除配置
+
+只能删除一个 section
+
+```
+spm config remove source:alipay
+```
+
+### 显示所有配置
+
+```
+spm config show
+```
+
