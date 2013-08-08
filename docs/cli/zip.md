@@ -13,7 +13,7 @@ npm install apm -g
 
 ## 使用说明
 
-将模块打成 zip 包，包内以 `family/name/version` 的方式存放。
+模块生成 zip 包。
 
 ```
 $ cd widget
@@ -26,6 +26,8 @@ $ spm zip
 $ spm zip arale/widget
 $ spm zip arale/widget@1.0.0
 ```
+
+**提醒支付宝的同学：包内的目录结构为 family/name/version，所以要在 assets 目录上传。**
 
 ## 选项
 
