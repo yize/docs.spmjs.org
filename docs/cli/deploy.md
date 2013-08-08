@@ -26,6 +26,12 @@ $ spm deploy
 
 上传后可访问 http://assets.dev.alipay.net/arale/widget/1.0.0/widget.js
 
+还可以直接上传源上已有的文件
+
+```
+$ spm deploy arale/widget
+```
+
 ## 选项
 
 ### --target
