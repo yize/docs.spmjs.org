@@ -16,7 +16,7 @@ npm install phantomjs -g
 
 ## 使用说明
 
-> 此工具为支付宝内部使用
+> 此工具只支持支付宝内部使用
 
 spm test 使用 phantomjs 跑测试用例，测试 src 和 dist 代码，并使用 jscoverage 生成覆盖率文档。 
 

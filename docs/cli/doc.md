@@ -13,7 +13,7 @@ npm install apm -g
 
 ## 使用说明
 
-> 此工具为支付宝内部使用
+> 此工具只支持支付宝内部使用
 
 spm doc 为文档管理工具，用于生成，开发，发布文档，是对 [nico](https://github.com/lepture/nico) 的一个封装。
 
