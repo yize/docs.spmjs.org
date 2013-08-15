@@ -71,11 +71,9 @@ proxy = username:password@proxy.server:port
 
 ## package.json
 
-spm follows the [Common Module Definition](https://github.com/spmjs/specification) packaging standards, compatible with nodejs' package.json.
+spm 遵循 [Common Module Definition](https://github.com/spmjs/specification) 的 [packaging draft](https://github.com/spmjs/specification/blob/master/draft/package.md) 规范，每个模块必须有一个 package.json 文件来描述模块自身。
 
-CMD [packaging draft](https://github.com/spmjs/specification/blob/master/draft/package.md) add an additional namespace, which is `family`. spm add another namespace, which is `spm`.
-
-Here is an example of `package.json`:
+以下为 package.json 的示例
 
 ```
 {
@@ -83,12 +81,20 @@ Here is an example of `package.json`:
     "name": "base",
     "version": "1.0.0",
     "description": "base is ....",
+    "keywords": ["class"],
+    "author": "Hsiaoming Yang <me@lepture.com>",
+    "maintainer": [
+    	"Hsiaoming Yang <me@lepture.com>",
+    	"Haoliang Gao <a@chuo.me>"
+    ],
     "homepage": "http://aralejs.org/base/",
     "repository": {
-        "type": "git",
+       	"type": "git",
         "url": "https://github.com/aralejs/base.git"
     },
-    "keywords": ["class"],
+    "bugs": {
+        "url": "https://github.com/arale/overlay/issues"
+    },
 
     "spm": {
         "source": "src",
@@ -101,41 +107,67 @@ Here is an example of `package.json`:
 }
 ```
 
+对于 spm 来说 family、name 和 version 三个字段是必须的；package.json 中的 spm 字段是扩展字段，供 spm build 使用。
 
-## family
 
-This is the account name on http://spmjs.org.
+## family `required`
 
-## name
+这个字段为源 (http://spmjs.org) 上的账户名，可指定一类模块，我们称之为「家族」。这个字段存在的原因是为了解决命名冲突的问题，灵感来源于 github。
 
-This is your package's name.
+世界这么大，不同的人开发同名组件是很常有的事情，像 arale/events 和 popomore/events 可以并存。
 
-## version
+此外还能将一种类型的模块都放在一个 family 下，如 jquery 以及他的 ui 组件都可以放在 jquery 的 family 下。
 
-The version of your package. We only accept version like this:
+命名规范支持小写字母，数字和 -，正则匹配 `[a-z0-9-]`。
 
-```
-1.0.0
-```
+## name `required`
 
-The regexp is `\d+\.\d+\.\d+`.
+模块的名字，命名规范同 family。
+
+## version `required`
+
+版本使用 `MAJOR.MINOR.PATCH` 版本好，正则匹配 `\d+\.\d+\.\d+`。
+
+PATCH 变更为 bugfix，MINOR 为非兼容的修改和功能新增，MAJOR 为定位调整或大范围的重写。
 
 ## description
 
-Put a description in it. It's a string. This helps people discover your package, as it's listed in `spm search`.
-
+模块的简介，对模块的描述应该能让其他人了解模块的功能，可通过 spm search 搜索。
 
 ## keywords
 
-Put keywords in it. It's an array of strings. This helps people discover your package as it's listed in `spm search`.
+模块的关键字，为一个数组，可通过 spm search 搜索。
+
+## author
+
+模块的作者，也就是最初开发这个模块的人。
+
+支持两种写法
+
+```
+"author": "Hsiaoming Yang <me@lepture.com>"
+
+"author": {
+	"name": "Hsiaoming Yang",
+	"email": "me@lepture.com"
+}
+```
+
+## maintainer
+
+后期模块的维护者或贡献者，为一个数组。
 
 ## homepage
 
-The url to the project homepage.
+模块的文档页面。
 
 ## repository
 
-The repository of your project.
+模块的仓库。
+
+## bugs
+
+模块问题和讨论的链接。
 
 ## private
 
@@ -143,102 +175,7 @@ If you set `"private": true` in your package.json, then spm will refuse to publi
 
 This is a way to prevent accidental publication of private repositories. But you can publish to other source center.
 
-## spm.alias
+## spm
 
-Alias.
+这个字段是供 spm build 使用，请看[构建章节]()。
 
-## spm.output
-
-Output is an array that contains the files for distribution, it will auto concat the relative dependencies.
-
-### Single File
-
-For example:
-
-```js
-// a.js
-define(function(require) {
-    require('./b')
-});
-
-// b.js
-define(function(require) {
-    require('./c')
-});
-
-// c.js
-define(function(require) {
-});
-```
-
-Now define your output as:
-
-```json
-{
-    "output": ["a.js", "c.js"]
-}
-```
-
-It will create a `a.js` and a `c.js` in the `dist` directory. The `dist/a.js` contains code of `src/a.js`, `src/b.js` and `src/c.js`. The `dist/c.js` will only contain the code of `src/c.js`, because it requires nothing.
-
-
-### Glob Pattern
-
-Output also support glob patterns. Take an example:
-
-```
-package.json
-src/
-    i18n/
-        en.js
-        zh.js
-        fr.js
-```
-
-Now define your output as:
-
-```json
-{
-    "output": ["i18n/*.js"]
-}
-```
-
-And it will distribute every js files to `dist` folder.
-
-If your folder structure is something like this:
-
-```
-src/
-    i18n/
-        locale.js
-        en/
-            locale.js
-        zh/
-            zh_CN/
-                locale.js
-            zh_TW/
-                locale.js
-```
-
-You should define your output as:
-
-```json
-{
-    "output": ["i18n/**/*"]
-}
-```
-
-## spm.include
-
-This means the build strategy, options for include:
-
-- relative: this is the default value, include relative dependencies
-- all: include all dependencies
-- self: include only my self
-
-
-## Old Time
-
-1. `root` is deprecated, use `family` instead.
-2. `dependencies` is deprecated, use `spm.alias` instead.
-3. `output` changed
