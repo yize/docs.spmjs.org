@@ -48,7 +48,7 @@ spm install .
 
 ### -d, --destination
 
-可指定输入路径，默认为 sea-modules。
+可指定下载目录，默认为 sea-modules。
 
 ### -g, --global
 
