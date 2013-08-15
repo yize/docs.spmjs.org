@@ -67,3 +67,16 @@ install 的缓存机制
 ```
 
 使用 force 选项则不会判断当前路径是否存在，会强制替换当前路径的模块。
+
+## 配置文件
+
+可在 [spmrc]() 设置
+
+```
+[install]
+; 是否保留 -debug 文件
+debugfile = true
+
+; 下载生成的目录结构，必须以 {{filename}} 结尾
+format = {{family}}/{{name}}/{{version}}/{{filename}}
+```
