@@ -107,7 +107,9 @@ spm 遵循 [Common Module Definition](https://github.com/spmjs/specification) �
 }
 ```
 
-对于 spm 来说 family、name 和 version 三个字段是必须的；package.json 中的 spm 字段是扩展字段，供 spm build 使用。
+对于 spm 来说 family、name 和 version 三个字段是必须的，标准的模块生成的路径应该是 `family/name/version/file`，比如 jquery 的路径为 `jquery/jquery/1.7.2/jquery`，虽然看起来有冗余，但非常清晰。
+
+package.json 中的 spm 字段是扩展字段，供 spm build 使用。
 
 
 ## family `required`
