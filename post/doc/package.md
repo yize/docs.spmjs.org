@@ -1,75 +1,10 @@
-# 配置规范
+# package.json
 
 - pubdate: 2013-08-15
+- category: 规范标准
 - index: 5
 
 ----------
-
-## spmrc
-
-spmrc 为 spm 及其插件所使用的配置文件，文件为 `~/.spm/spmrc`，可通过[类库](https://github.com/spmjs/spmrc)和 [spm config]() 进行操作。
-
-spmrc 是以 ini 形式存储的，结构如下
-
-```
-[section1]
-name = property
-
-[section2]
-name = property
-```
-
-以下会列举一些全局的配置
-
-### user
-
-可指定一个 gruntfile 的路径，可以配置本地或远程的。
-
-```
-[user]
-gruntfile =
-```
-
-通过 gruntfile 可高度自定义，如
-
-1. 自定义命令
-
-    在 gruntfile 注册一个 task hello，就可以用 spm hello 执行。
-
-2. 覆盖原有命令
-
-    在 gruntfile 重置下 build 的任务，可参考 [apm](https://github.com/spmjs/apm/blob/master/Gruntfile.js)。
-
-### source
-
-用 source 来指定源，可以指定多个。
-
-```
-[source:default]
-url = http://spmjs.org
-auth =
-
-[source:alipay]
-url = http://spmjs.alipay.com
-```
-
-然后可以通过 -s 指定，使用 default 可不指定，如将模块上传到 alipay 的源
-
-```
-spm publish -s alipay
-```
-
-任何人都可以从源读取，但是**写操作是要登录的**。先到源上注册账号通过 [spm login]() 登录，配置文件中会生成一个 auth 的 token。
-
-可支持代理
-
-```
-[source:default]
-url = http://spmjs.org
-proxy = username:password@proxy.server:port
-```
-
-## package.json
 
 spm 遵循 [Common Module Definition](https://github.com/spmjs/specification) 的 [packaging draft](https://github.com/spmjs/specification/blob/master/draft/package.md) 规范，每个模块必须有一个 package.json 文件来描述模块自身。
 
@@ -84,12 +19,12 @@ spm 遵循 [Common Module Definition](https://github.com/spmjs/specification) �
     "keywords": ["class"],
     "author": "Hsiaoming Yang <me@lepture.com>",
     "maintainer": [
-    	"Hsiaoming Yang <me@lepture.com>",
-    	"Haoliang Gao <a@chuo.me>"
+      "Hsiaoming Yang <me@lepture.com>",
+      "Haoliang Gao <a@chuo.me>"
     ],
     "homepage": "http://aralejs.org/base/",
     "repository": {
-       	"type": "git",
+        "type": "git",
         "url": "https://github.com/aralejs/base.git"
     },
     "bugs": {
@@ -112,7 +47,7 @@ spm 遵循 [Common Module Definition](https://github.com/spmjs/specification) �
 package.json 中的 spm 字段是扩展字段，供 spm build 使用。
 
 
-## family `required`
+## family (required)
 
 这个字段为源 (http://spmjs.org) 上的账户名，可指定一类模块，我们称之为「家族」。这个字段存在的原因是为了解决命名冲突的问题，灵感来源于 github。
 
@@ -122,11 +57,11 @@ package.json 中的 spm 字段是扩展字段，供 spm build 使用。
 
 命名规范支持小写字母，数字和 -，正则匹配 `[a-z0-9-]`。
 
-## name `required`
+## name (required)
 
 模块的名字，命名规范同 family。
 
-## version `required`
+## version (required)
 
 版本使用 `MAJOR.MINOR.PATCH` 版本好，正则匹配 `\d+\.\d+\.\d+`。
 
@@ -150,8 +85,8 @@ PATCH 变更为 bugfix，MINOR 为非兼容的修改和功能新增，MAJOR 为�
 "author": "Hsiaoming Yang <me@lepture.com>"
 
 "author": {
-	"name": "Hsiaoming Yang",
-	"email": "me@lepture.com"
+  "name": "Hsiaoming Yang",
+  "email": "me@lepture.com"
 }
 ```
 
@@ -180,4 +115,3 @@ This is a way to prevent accidental publication of private repositories. But you
 ## spm
 
 这个字段是供 spm build 使用，请看[构建章节]()。
-
