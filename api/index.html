@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="generator" content="nico 0.4.4">
+    <meta name="generator" content="nico 0.4.6">
     <meta name="theme" content="spm 0.1">
     <title>spm</title>
     <link rel="stylesheet" href="../static/one.css" />
@@ -41,62 +41,31 @@
   </div>
 
   <div class="entry-content"><p>Get the interface of spm:</p>
-<div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> spm = require(<span class="string">'spm'</span>)
-</code></pre></div><h2 id="spm-version">spm.version</h2>
-<p>The version of spm.</p>
-<h2 id="spm-log-category-message">spm.log(category, message)</h2>
-<p>Always use <code>spm.log</code> in your program, never use <code>console</code>.</p>
-<div class="highlight"><pre><code class="javascript">spm.log(<span class="string">'install'</span>, <span class="string">'arale/class'</span>)
-</code></pre></div><h2 id="spm-plugin">spm.plugin</h2>
-<p>API for plugins.</p>
-<h3 id="spm-plugin-install-options">spm.plugin.install(options)</h3>
-<p>Install a plugin, used by postinstall hook in npm:</p>
+<div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> spm = require(<span class="string">'spm'</span>)</code></pre></div><h2 id="spm-version">spm.version</h2><p>The version of spm.</p>
+<h2 id="spm-log-category-message">spm.log(category, message)</h2><p>Always use <code>spm.log</code> in your program, never use <code>console</code>.</p>
+<div class="highlight"><pre><code class="javascript">spm.log(<span class="string">'install'</span>, <span class="string">'arale/class'</span>)</code></pre></div><h2 id="spm-plugin">spm.plugin</h2><p>API for plugins.</p>
+<h3 id="spm-plugin-install-options">spm.plugin.install(options)</h3><p>Install a plugin, used by postinstall hook in npm:</p>
 <div class="highlight"><pre><code class="javascript">spm.plugin.install({
   name: <span class="string">'init'</span>,
   bin: <span class="string">'spm-init'</span>,
   description: <span class="string">'init …'</span>
-})
-</code></pre></div><h3 id="spm-plugin-uninstall-name">spm.plugin.uninstall(name)</h3>
-<p>Uninstall a plugin, used by uninstall hook in npm:</p>
-<div class="highlight"><pre><code class="javascript">spm.plugin.uninstall(<span class="string">'init'</span>)
-</code></pre></div><h3 id="spm-plugin-plugins">spm.plugin.plugins</h3>
-<p>All installed plugins:</p>
-<pre>var plugins = spm.plugin.plugins;
-</pre><h2 id="spm-config">spm.config</h2>
-<p>Interact with <code>~/.spm/spmrc</code> config file.</p>
-<h3 id="spm-config-get-key">spm.config.get(key)</h3>
-<p>Get information in spmrc:</p>
+})</code></pre></div><h3 id="spm-plugin-uninstall-name">spm.plugin.uninstall(name)</h3><p>Uninstall a plugin, used by uninstall hook in npm:</p>
+<div class="highlight"><pre><code class="javascript">spm.plugin.uninstall(<span class="string">'init'</span>)</code></pre></div><h3 id="spm-plugin-plugins">spm.plugin.plugins</h3><p>All installed plugins:</p>
+<pre>var plugins = spm.plugin.plugins;</pre><h2 id="spm-config">spm.config</h2><p>Interact with <code>~/.spm/spmrc</code> config file.</p>
+<h3 id="spm-config-get-key">spm.config.get(key)</h3><p>Get information in spmrc:</p>
 <pre>spm.config.get(&#39;user&#39;)
-spm.config.get(&#39;user.username&#39;)
-</pre><h3 id="spm-config-set-key-value">spm.config.set(key, value)</h3>
-<p>Set section in spmrc:</p>
-<pre>spm.config.set(&#39;user.username&#39;, &#39;lepture&#39;)
-</pre><h3 id="spm-config-remove-section">spm.config.remove(section)</h3>
-<p>Remove a section in spmrc:</p>
-<pre>spm.config.remove(&#39;user&#39;)
-</pre><h2 id="spm-build-options">spm.build(options)</h2>
-<p>Build the module.</p>
-<h3 id="spm-build-loadbuildtasks-options-pkg">spm.build.loadBuildTasks(options, pkg)</h3>
-<p>Load build tasks: <code>spm-build</code>.</p>
-
+spm.config.get(&#39;user.username&#39;)</pre><h3 id="spm-config-set-key-value">spm.config.set(key, value)</h3><p>Set section in spmrc:</p>
+<pre>spm.config.set(&#39;user.username&#39;, &#39;lepture&#39;)</pre><h3 id="spm-config-remove-section">spm.config.remove(section)</h3><p>Remove a section in spmrc:</p>
+<pre>spm.config.remove(&#39;user&#39;)</pre><h2 id="spm-build-options">spm.build(options)</h2><p>Build the module.</p>
+<h3 id="spm-build-loadbuildtasks-options-pkg">spm.build.loadBuildTasks(options, pkg)</h3><p>Load build tasks: <code>spm-build</code>.</p>
 <p>This is a task collection which is <a href="https://github.com/spmjs/grunt-spm-build">grunt-spm-build</a>. You can bind and load this task too.</p>
-<h2 id="spm-login-options">spm.login(options)</h2>
-<p>Login/register spmjs.org.</p>
-<h2 id="spm-install-options">spm.install(options)</h2>
-<p>Install packages from spmjs.org.</p>
-<h2 id="spm-info-options">spm.info(options)</h2>
-<p>Get information of a module from spmjs.org.</p>
-<h2 id="spm-search-options">spm.search(options)</h2>
-<p>Search modules from spmjs.org.</p>
-<pre>spm.search({query: &#39;jquery&#39;})
-</pre><h2 id="spm-publish-options">spm.publish(options)</h2>
-<p>Publish a package to spmjs.org.</p>
-<h2 id="spm-unpublish-options">spm.unpublish(options)</h2>
-<p>Unpublish a package from spmjs.org.</p>
-<pre>spm.unpublish({query: &#39;arale&#47;class@1.0.0&#39;})
-</pre><h2 id="spm-sdk">spm.sdk</h2>
-<p>Low level API:</p>
-
+<h2 id="spm-login-options">spm.login(options)</h2><p>Login/register spmjs.org.</p>
+<h2 id="spm-install-options">spm.install(options)</h2><p>Install packages from spmjs.org.</p>
+<h2 id="spm-info-options">spm.info(options)</h2><p>Get information of a module from spmjs.org.</p>
+<h2 id="spm-search-options">spm.search(options)</h2><p>Search modules from spmjs.org.</p>
+<pre>spm.search({query: &#39;jquery&#39;})</pre><h2 id="spm-publish-options">spm.publish(options)</h2><p>Publish a package to spmjs.org.</p>
+<h2 id="spm-unpublish-options">spm.unpublish(options)</h2><p>Unpublish a package from spmjs.org.</p>
+<pre>spm.unpublish({query: &#39;arale/class@1.0.0&#39;})</pre><h2 id="spm-sdk">spm.sdk</h2><p>Low level API:</p>
 <ul>
 <li><a href="https://github.com/spmjs/cmd-util/blob/master/docs/ast.md"><code>spm.sdk.ast</code></a></li>
 <li><a href="https://github.com/spmjs/cmd-util/blob/master/docs/iduri.md"><code>spm.sdk.iduri</code></a></li>
@@ -121,7 +90,7 @@ spm.config.get(&#39;user.username&#39;)
 
     </div>
     <div class="footer">
-      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.4.4</p>
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.4.6</p>
     </div>
     <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../static/one.js"></script>
     <div class="github"><a class="github-link" href="https://github.com/spmjs/spm2">Fork me on GitHub</a></div>
