@@ -1,5 +1,5 @@
 {
-  "source": "docs",
+  "source": "post",
   "output": "_site",
   "permalink": "{{directory}}/{{filename}}",
   "sitename": "SPM",
