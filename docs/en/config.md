@@ -46,7 +46,7 @@ The default source is:
 
 ```ini
 [source:default]
-url = http://spmjs.org
+url = https://spmjs.org
 ```
 
 You can add another source:
@@ -58,7 +58,7 @@ url = http://spmjs.alipay.com
 
 When you `info`, `search`, `login`, `install`, `publish`, you can set the source in your command line:
 
-    $ spm info -s alipay jquery
+    $ spm info jquery -s alipay
 
 If you are behide a firewall, you need proxy:
 
