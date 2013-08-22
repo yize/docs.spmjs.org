@@ -9,8 +9,9 @@
 
 Configuration file is located at `~/.spm/spmrc` in ini format:
 
-    $ spm config user.username lepture
-
+```
+$ spm config user.username lepture
+```
 
 ## user
 
@@ -58,7 +59,9 @@ url = http://spmjs.alipay.com
 
 When you `info`, `search`, `login`, `install`, `publish`, you can set the source in your command line:
 
-    $ spm info jquery -s alipay
+```
+$ spm info jquery -s alipay
+```
 
 If you are behide a firewall, you need proxy:
 
