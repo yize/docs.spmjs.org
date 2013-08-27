@@ -1,6 +1,8 @@
 # spm-init
 
 - pubdate: 2013-08-07
+- category: 通用插件
+- index: 10
 
 -----------
 

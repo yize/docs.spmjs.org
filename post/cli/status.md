@@ -1,6 +1,8 @@
 # spm-status
 
 - pubdate: 2013-08-08
+- category: 通用插件
+- index: 11
 
 -----------
 

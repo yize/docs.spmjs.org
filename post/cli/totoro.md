@@ -1,6 +1,8 @@
 # spm-totoro
 
 - pubdate: 2013-08-08
+- category: 支付宝插件
+- index: 16
 
 -----------
 

@@ -1,7 +1,8 @@
 # spm-plugin
 
 - pubdate: 2013-08-07
-- index: 2
+- category: 包管理工具
+- index: 8
 
 -----------
 

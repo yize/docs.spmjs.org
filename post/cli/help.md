@@ -1,7 +1,8 @@
 # spm-help
 
 - pubdate: 2013-08-07
-- index: 3
+- category: 包管理工具
+- index: 7
 
 -----------
 

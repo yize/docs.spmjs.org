@@ -1,6 +1,8 @@
 # spm-unpublish
 
 - pubdate: 2013-08-07
+- category: 包管理工具
+- index: 5
 
 -----------
 
