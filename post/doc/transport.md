@@ -66,7 +66,7 @@ define(function(require, exports, module) {
     });
     ```
 
-所以最后上线的模块应该是 define(id, deps, factory) 这种形式的，对原始的模块进行的转换我们称之为 transport。
+这些问题在 [seajs 官网](https://github.com/seajs/seajs/issues/426)也有说明，所以最后上线的模块应该是 define(id, deps, factory) 这种形式的，对原始的模块进行的转换我们称之为 transport。
 
 ## id 规范
 
