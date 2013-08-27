@@ -29,8 +29,5 @@
   {%- endif %}
 
   <div class="entry-content">{{post.html|linkfix}}</div>
-  <div class="entry-meta">
-    <time class="updated" datetime="{{post.pubdate|xmldatetime}}">{{post.pubdate|date('Y-m-d')}}</time>
-  </div>
 </div>
 {% endblock -%}
