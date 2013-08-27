@@ -6,10 +6,9 @@
   "github": "https://github.com/spmjs/spm2",
   "google": "UA-38943643-2",
   "navigation": [
-    {"link": "contrib/index.html", "title": "贡献文档"},
-    {"link": "en/index.html", "title": "Documentation"},
-    {"link": "api/index.html", "title": "API"},
-    {"link": "cli/index.html", "title": "Manual"}
+    {"link": "doc/index.html", "title": "使用文档"},
+    {"link": "cli/login.html", "title": "命令集"},
+    {"link": "api/index.html", "title": "开发者文档"}
   ],
   "writers": [
     "nico.PageWriter",
