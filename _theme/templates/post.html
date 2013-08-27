@@ -4,11 +4,14 @@
 {%- block sidebar %}
 <div class="sidebar">
   <h2 class="sidebar-title">Documentation</h2>
+  {%- for category in resource.posts|category(post.directory) %}
   <ul>
-    {%- for item in resource.posts|directory(post.directory) %}
+    <li>{{category.title}}</li>
+    {%- for item in category.posts %}
     <li{%if item.id == post.id%} class="active"{%endif%}><a href="./{{item.meta.filename}}">{{item.title}}</a></li>
     {%- endfor %}
   </ul>
+  {%- endfor %}
 </div>
 {%- endblock %}
 
