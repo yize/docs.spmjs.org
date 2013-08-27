@@ -28,7 +28,7 @@
   </head>
   <body>
     <div class="navigation" role="navigation">
-      <div class="container">
+      <div class="row">
         <a class="home" href="{{content_url('index.html')}}">{{config.sitename}}</a>
         {%- if config.navigation %}
         <div class="menu">
@@ -39,9 +39,9 @@
         {%- endif %}
       </div>
     </div>
-    <div class="mainbody">
-      {%- block document %}{% endblock %}
-      {%- block sidebar %}{% endblock %}
+    <div class="row clearfix">
+      <div class="column-left">{%- block sidebar %}{% endblock %}</div>
+      <div class="column-right">{%- block document %}{% endblock %}</div>
     </div>
     <div class="footer">
       {%- if config.footer %}

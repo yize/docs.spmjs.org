@@ -3,12 +3,11 @@
 
 {%- block sidebar %}
 <div class="sidebar">
-  <h2 class="sidebar-title">Documentation</h2>
   {%- for category in resource.posts|category(post.directory) %}
   <ul>
-    <li>{{category.title}}</li>
+    <li class="sidebar-category">{{category.title}}</li>
     {%- for item in category.posts %}
-    <li{%if item.id == post.id%} class="active"{%endif%}><a href="./{{item.meta.filename}}">{{item.title}}</a></li>
+    <li{%if item.id == post.id%} class="sidebar-current"{%endif%}><a href="./{{item.meta.filename}}">{{item.title}}</a></li>
     {%- endfor %}
   </ul>
   {%- endfor %}
@@ -16,7 +15,7 @@
 {%- endblock %}
 
 {%- block document %}
-<div class="hentry">
+<div class="hentry typo">
   <h1 class="entry-title">{{post.title}}</h1>
   {%- if post.description %}
   <blockquote class="entry-description">{{post.description}}</blockquote>
