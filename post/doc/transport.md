@@ -20,9 +20,9 @@ define(function(require, exports, module) {
 })
 ```
 
-但这样写在线上运行会有一些问题
+但这样写在线上运行会存在一些问题
 
-1. 无法在一个文件中定义多个模块，
+1. 无法在一个文件中定义多个模块
 
     这个问题在 combo 中尤为明显，多个 js 文件被动态合并成一个文件下载下来。
 
@@ -44,13 +44,33 @@ define(function(require, exports, module) {
 
 2. 需要分析代码解析依赖
 
-    seajs 是通过分析 factory 的源码进行依赖分析的，提取所有的 require 即所有的依赖。但是在线上运行这一步是非常耗性能的，可以在构建的时候提前提取依赖。
+    seajs 是通过分析 factory 的源码获取依赖的，提取所有的 require 即所有的依赖。但是在线上运行这一步是非常耗性能的，可以在构建的时候提前提取依赖。
+
+    构建时提取的依赖是扁平化的，会提取该模块所有的依赖，这样可以先将依赖的所有模块提前下载下来。
+
+    ```
+    // a.js
+    define(function(require){
+      require('./b');
+    });
+    // b.js
+    define(function(require){
+      require('./c');
+    });
+    // c.js
+    define(function(){});
+
+    // 生成的 a.js 会包含 b.js 和 c.js 的依赖
+    define('a', ['./b', './c'], function(require){
+      require('./b');
+    });
+    ```
 
 所以最后上线的模块应该是 define(id, deps, factory) 这种形式的，对原始的模块进行的转换我们称之为 transport。
 
 ## id 规范
 
-Transport 后每个模块的标识为 idleading + 文件名，idleading 的格式是 `family/name/version`。
+Transport 后每个模块的标识为 idleading + 文件名，idleading 的格式是 `family/name/version`，此为标准格式。
 
 ```
 // base.js
@@ -60,21 +80,21 @@ define(function(){});
 define('arale/base/1.0.0/base', ['arale/class/1.0.0/class','arale/events/1.0.0/events','./aspect','./attribute'], function(){});
 ```
 
-这个 id 会在多处使用
+这个 id 规范会在多处使用
 
 1. 物理存放路径/URL
 
-    上面 base.js 的访问路径为 http://assets.spmjs.org/arale/base/1.0.1/base.js
+    上面 base.js 的访问路径为 http://assets.spmjs.org/arale/base/1.0.1/base.js ，路径中包含 `family/name/version`。
 
 2. 模块的 id
 
-   define 的 id 必须为这个，而且需要跟 url 匹配。
+   define 的 id 需要跟 url 匹配，具体如何匹配是根据 seajs 而定的，一般 seajs 会放在根目录(`/sea.js` `/seajs/sea.js` `/seajs/seajs/2.1.1/sea.js` 都可以)，所以 base 就为 http://assets.spmjs.org 。
 
-   具体如何匹配是根据 seajs 而定的，一般 seajs 会放在根目录(`/sea.js` `/seajs/sea.js` `/seajs/seajs/2.1.1/sea.js` 都可以)，所以 base 就为 http://assets.spmjs.org 。
+   "请求的 url" = "seajs 的 base" + "define 的 id"，如
 
-   “请求的 url” = “seajs 的 base” + “define 的 id”
+   "http://assets.spmjs.org/arale/base/1.0.1/base.js" = "http://assets.spmjs.org" + "/arale/base/1.0.1/base.js"
 
 3. 包的 id
 
-    通过 spm 管理模块包，也需要定义 family，name 和 version。
+    通过 spm 管理模块包，也需要定义 family，name 和 version。如 https://spmjs.org/arale/base/
     
