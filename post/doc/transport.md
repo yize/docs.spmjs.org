@@ -70,7 +70,7 @@ define(function(require, exports, module) {
 
 ## id 规范
 
-Transport 后每个模块的标识为 idleading + 文件名，idleading 的格式是 `family/name/version`，此为标准格式。
+Transport 后每个模块都有自己的标识，即为 id。id 是由 idleading（标准格式为 `family/name/version`） 和文件名组成的。以下示例的 id 为 `arale/base/1.0.0/base`。
 
 ```
 // base.js
@@ -84,7 +84,7 @@ define('arale/base/1.0.0/base', ['arale/class/1.0.0/class','arale/events/1.0.0/e
 
 1. 物理存放路径/URL
 
-    上面 base.js 的访问路径为 http://assets.spmjs.org/arale/base/1.0.1/base.js ，路径中包含 `family/name/version`。
+    base.js 的访问路径为 http://assets.spmjs.org/arale/base/1.0.1/base.js ，路径中包含 `family/name/version`。
 
 2. 模块的 id
 
