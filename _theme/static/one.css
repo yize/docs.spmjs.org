@@ -57,7 +57,9 @@ a {
 
 /* sidebar */
 .sidebar {
+  position: relative;
   padding-top: 40px;
+  margin-right: -1px;
 }
 .sidebar li {
   padding: 7px 0 7px 30px;
@@ -82,6 +84,7 @@ a {
   background: #fff;
   padding: 40px;
   min-height: 500px;
+  border-left: 1px solid #ccc;
 }
 .hentry .entry-title {
   padding-bottom: 20px;
