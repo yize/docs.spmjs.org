@@ -64,7 +64,7 @@ a {
 }
 .sidebar-category {
   position: relative;
-  background: #37C09F;
+  background: #63BDA8;
   color: #fff;
   font-size: 18px;
 }
@@ -137,7 +137,7 @@ a.title-permalink:hover {
   text-align: center;
 }
 
-/* github */
+/* github
 .github {
   position: absolute;
   top: 70px;
@@ -169,4 +169,12 @@ a.title-permalink:hover {
   .github {
     display: none;
   }
+}*/
+
+#extra {
+    position: absolute;
+    top: 31px;
+    right: 0;
+    border: 0;
+    z-index: 11;
 }
