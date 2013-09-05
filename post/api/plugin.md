@@ -1,0 +1,61 @@
+# spm.plugin
+
+- pubdate: 2013-03-26
+- category: SPM
+- index: 4
+
+-----------
+
+开发 SPM 插件请阅读下面的 API.
+
+```js
+var plugin = spm.plugin;
+```
+
+## plugin.install(options)
+
+安装一个插件, 可以在 `postinstall.js` 中使用.
+
+- options.name: [String] 插件名字
+- options.binary: [String] 插件在 npm 注册的模块名字
+- options.description: [String] 插件描述
+
+```js
+plugin.install({
+  name: 'init',
+  binary: 'spm-init',
+  description: 'init a template'
+})
+```
+
+内部直接调用的是 `spm install -g spm-pluginName`.
+
+## plugin.uninstall(name)
+
+删除一个插件, 可以在 `uninstall.js` 中使用.
+
+- name: [String] 插件名字.
+
+```js
+plugin.uninstall('init')
+```
+
+## plugin.plugins()
+
+返回所有插件
+
+```js
+var allPlugins = plugin.plugins();
+
+/* 返回结果格式:
+[
+  {
+    name: 'init',
+    binary: 'spm-init',
+    description: 'init a template'
+  },
+
+  // ...
+]
+*/
+```
