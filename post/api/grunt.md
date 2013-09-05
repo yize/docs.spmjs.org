@@ -1,7 +1,8 @@
 # grunt
 
 - pubdate: 2013-03-26
-- index: 10
+- category: 低层 API
+- index: 13
 
 Hack the grunt.
 

@@ -1,7 +1,7 @@
 # spm.config
 
 - pubdate: 2013-03-26
-- category: SPM
+- category: 高层 API
 - index: 1
 
 -----------

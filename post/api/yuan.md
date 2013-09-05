@@ -1,7 +1,8 @@
 # yuan
 
 - pubdate: 2013-03-26
-- index: 5
+- category: 低层 API
+- index: 12
 
 communication with spmjs.org.
 
@@ -18,6 +19,11 @@ This is a lower API, for higher API, use:
 - `spm.info`
 - `spm.search`
 - `spm.login`
+
+## options
+
+todo:
+
 
 ## login
 
