@@ -6,7 +6,7 @@
 
 -----
 
-此模块用于与 spm 源交互, 外部模块放在 spmjs.org, 内部模块放在 yuan.alipay.im.
+此模块用于与 SPM 源交互, 外部模块放在 spmjs.org, 内部模块放在 yuan.alipay.im.
 
 
 ```js
@@ -15,7 +15,7 @@ var yuan = require('spm').sdk.yuan
 
 ## options
 
-- options.source: [String] 从哪个源上安装, 默认是 `'default'`, 取自 spmrc 的 default 配置. 可以设置 spmrc 中其他定义的字段值.
+- options.source: [String] 从哪个源上安装, 默认是 `'default'`, 取自 [spmrc](/doc/spmrc) 的 default 配置. 可以设置 spmrc 中其他定义的字段值.
 - options.force: [Boolean] 设置请求头中的 'X-Yuan-Force'.
 - options.lang: [String] 设置请求头中的 'Accept-Language', 默认为 `'en_US'`.
 - options.tag: [String] 发布的同时, 打上 tag. 默认为 `'stable'`. 如果是开发版, 可取 `'dev'`.

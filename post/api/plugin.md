@@ -6,7 +6,7 @@
 
 -----------
 
-开发 SPM 插件请阅读下面的 API.
+SPM 提供插件接口给外部, 用于更好地扩展 SPM.
 
 ```js
 var plugin = spm.plugin;
@@ -27,8 +27,6 @@ plugin.install({
   description: 'init a template'
 })
 ```
-
-内部直接调用的是 `spm install -g spm-pluginName`.
 
 ## plugin.uninstall(name)
 
