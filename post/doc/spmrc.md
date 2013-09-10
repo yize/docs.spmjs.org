@@ -6,7 +6,7 @@
 
 ----------
 
-spmrc 为 spm 及其插件所使用的配置文件，文件为 `~/.spm/spmrc`，可通过[类库](https://github.com/spmjs/spmrc)和 [spm config]() 进行操作。
+spmrc 为 SPM 及其插件所使用的配置文件，文件为 `~/.spm/spmrc`，可通过[类库](https://github.com/spmjs/spmrc)和 [spm config]() 进行操作。
 
 spmrc 是以 ini 形式存储的，结构如下
 
