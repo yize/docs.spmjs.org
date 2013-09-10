@@ -25,6 +25,6 @@ $ spm unpublish jquery/jquery@1.8.2
 
 ### -s, --source
 
-指定源，详情看[配置文档]()。
+指定源，详情看 [配置文档](/doc/spmrc#source)。
 
 

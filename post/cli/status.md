@@ -33,7 +33,7 @@ $ spm status seajs/seajs@2.1.1 // 检测 seajs 2.1.1 版本
 
 ### -s, --source
 
-指定源，详情看[配置文档]()。
+指定源，详情看 [配置文档](/doc/spmrc#source)。
 
 ### -O, --output
 

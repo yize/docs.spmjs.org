@@ -30,5 +30,5 @@ $ spm info arale // 查看
 
 ### -s, --source
 
-指定源，详情看[配置文档]()。
+指定源，详情看 [配置文档](/doc/spmrc#source)。
 
