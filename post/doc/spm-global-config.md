@@ -16,7 +16,6 @@
 | -- run.json
 | -- init/
 | -- themes/
-| -- src/
 | -- cache/
 ```
 
@@ -47,8 +46,6 @@
 文档生成时使用的不同主题, 目前两套 arale 和 alice.
 
 arale 克隆的是 https://github.com/aralejs/nico-arale 仓库, alice 克隆的是 https://github.com/aliceui/nico-alice 仓库.
-
-## src/
 
 ## cache/
 
