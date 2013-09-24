@@ -37,7 +37,7 @@ $ spm zip arale/widget@1.0.0
 
 ### -s, --source
 
-指定源，详情看 [配置文档](/doc/spmrc#source)。
+指定源，详情看 [配置文档](../doc/spm-global-config#source)。
 
 ### -I, --input
 

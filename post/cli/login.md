@@ -14,7 +14,7 @@ npm install spm -g
 
 ## 使用说明
 
-对源进行一些写操作时需要用户权限才能进行，首先你需要明确你使用的源是哪个，可以查看 [配置文件的 source 选项](/doc/spmrc#source) ，官方的源为 https://spmjs.org/ 。
+对源进行一些写操作时需要用户权限才能进行，首先你需要明确你使用的源是哪个，可以查看 [配置文件的 source 选项](../doc/spm-global-config#source) ，官方的源为 https://spmjs.org/ 。
 
 你需要注册账户获取用户名和密码，然后就可以通过 `spm login` 来登录。直接输入 spm login 根据提示完成。
 
@@ -37,7 +37,7 @@ $ spm login -u admin -p ******
 
 ### -s, --source
 
-指定源，详情看 [配置文档](/doc/spmrc#source) 。
+指定源，详情看 [配置文档](../doc/spm-global-config#source) 。
 
 ### -u, --username
 

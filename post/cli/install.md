@@ -46,7 +46,7 @@ spm install .
 
 ### -s, --source
 
-指定源，详情看 [配置文档](/doc/spmrc#source)。
+指定源，详情看 [配置文档](../doc/spm-global-config#source)。
 
 ### -d, --destination
 
@@ -72,7 +72,7 @@ install 的缓存机制
 
 ## 配置文件
 
-可在 [spmrc](/doc/spmrc) 设置
+可在 [spmrc](../doc/spm-global-config#spmrc) 设置
 
 ```
 [install]

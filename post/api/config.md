@@ -6,7 +6,7 @@
 
 -----------
 
-提供对 [`~/.spm/spmrc`](/doc/spmrc) 这配置文件的操作接口.
+提供对 [`~/.spm/spmrc`](../doc/spm-global-config#spmrc) 这配置文件的操作接口.
 此接口是对 [`spm.sdk.spmrc`](https://github.com/spmjs/spmrc) 的高层封装, 你也可以直接使用它.
 
 ```js
