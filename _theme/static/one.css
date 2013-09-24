@@ -11,6 +11,9 @@ a {
   color: #5784BF
 }
 
+/* 修复 blockquote p */
+.typo blockquote p {margin: 0;}
+
 /* grid */
 .row {
   margin: 0 auto;

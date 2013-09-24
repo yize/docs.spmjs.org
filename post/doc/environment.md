@@ -10,6 +10,8 @@
 
 你也可以[通过包管理工具安装](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
 
+> spm 使用的 Node 版本高于 0.8.24。
+
 ## 设置 PATH 和 NODE_PATH
 
 **在配置前你要明白自己在做什么。**
@@ -68,3 +70,21 @@ git 下载地址如下
  -  [git for mac](https://code.google.com/p/git-osx-installer/downloads/list?can=3&q=&sort=-uploaded&colspec=Filename+Summary+Uploaded+Size+DownloadCount)
 
  -  [git for windows ](https://code.google.com/p/msysgit/downloads/list?q=full+installer+official+git)
+
+## windows 环境
+
+下载 [Windows 的 Node](http://nodejs.org/download/) 并安装，如下配置环境变量
+
+```
+PATH = C:\Users\{{username}}\AppData\Roaming\npm
+NODE_PATH = C:\Users\{{username}}\AppData\Roaming\npm\node_modules
+```
+
+也可以试试 Windows 的包管理工具 [chocolatey](https://github.com/chocolatey/chocolatey)
+
+安装 nodejs 和 git
+
+```
+c:\> cinst git.install
+c:\> cinst nodejs.install
+```
