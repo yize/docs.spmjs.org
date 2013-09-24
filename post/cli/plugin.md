@@ -14,7 +14,7 @@ npm install spm -g
 
 ## 使用说明
 
-`spm plugin` 可安装和卸载 plugin，plugin 需要符合[规范]()才能正确安装。
+`spm plugin` 可安装和卸载 plugin，plugin 需要符合 [插件的开发规范](/api/develop-plugin) 才能正确安装。
 
 ### 安装 plugin
 

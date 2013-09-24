@@ -1,23 +1,20 @@
 # grunt
 
 - pubdate: 2013-03-26
-- index: 10
-
-Hack the grunt.
+- category: 低层 API
+- index: 13
 
 -----
 
-spm hacks in grunt, extends grunt methods.
+SPM 对 Grunt 进行了些扩展. 包含 grunt 的所有接口.
 
 ```js
 var grunt = require('spm').sdk.grunt;
 ```
 
-It contains everything of grunt, and more.
-
 ## invokeTask(name, options)
 
-Invoke/call a task.
+调用/执行一个 Grunt 任务.
 
 ```js
 grunt.invokeTask('build', {
@@ -27,8 +24,8 @@ grunt.invokeTask('build', {
 })
 ```
 
-It will search the gruntfiles and detect if the task name in the gruntfile. If the task is in the gruntfile, it will run the task, if not, it will call the fallback function.
+它查找本地 Gruntfile.js 中设置的任务, 如果存在, 则会执行. 如果不存在, 则执行 `fallback` 回调.
 
 ## loadGlobalTasks(name)
 
-Load tasks in the global `NODE_PATH`. Just like `loadNpmTasks`, it can load task collections.
+加载一个全局模块集合, 这些模块会定义在 `NODE_PATH` . 类似于 `loadNpmTasks`.

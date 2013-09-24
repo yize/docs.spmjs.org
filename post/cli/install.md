@@ -16,7 +16,7 @@ npm install spm -g
 
 `spm install` 可以将源上的包下到本地，以 `family/name/version` 的目录显示 。
 
-模块名应该为 `family/name` 的形式，这是 [CMD 的规范]()。
+模块名应该为 `family/name` 的形式，这是 [CMD 的规范](https://github.com/seajs/seajs/issues/242)。
 
 ```
 spm install jquery/jquery
@@ -46,7 +46,7 @@ spm install .
 
 ### -s, --source
 
-指定源，详情看[配置文档]()。
+指定源，详情看 [配置文档](/doc/spmrc#source)。
 
 ### -d, --destination
 
@@ -72,7 +72,7 @@ install 的缓存机制
 
 ## 配置文件
 
-可在 [spmrc]() 设置
+可在 [spmrc](/doc/spmrc) 设置
 
 ```
 [install]

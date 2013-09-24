@@ -14,7 +14,7 @@ npm install spm -g
 
 ## 使用说明
 
-`spm config` 为 spm 的配置项，可供 spm 以及插件使用。这个命令是在操作 `~/.spm/spmrc` 这个文件，可查看 [spmrc 的规范]()。
+`spm config` 为 SPM 的配置项，可供 SPM 以及插件使用。这个命令是在操作 `~/.spm/spmrc` 这个文件，可查看 [spmrc 的规范](/doc/spmrc)。
 
 ### 添加配置
 
