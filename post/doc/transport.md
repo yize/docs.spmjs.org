@@ -10,7 +10,7 @@
 
 根据 [CMD 的模块定义规范](https://github.com/seajs/seajs/issues/242) 可以定义如下模块
 
-```
+```js
 define(function(require, exports, module) {
   var Base = require('base');
   var Widget = Base.extend({
@@ -26,7 +26,7 @@ define(function(require, exports, module) {
 
     这个问题在 combo 中尤为明显，多个 js 文件被动态合并成一个文件下载下来。
 
-    ```
+    ```js
     // a.js
     define(function(){});
     // b.js
@@ -48,7 +48,7 @@ define(function(require, exports, module) {
 
     构建时提取的依赖是扁平化的，会提取该模块所有的依赖，这样可以先将依赖的所有模块提前下载下来。
 
-    ```
+    ```js
     // a.js
     define(function(require){
       require('./b');
@@ -72,7 +72,7 @@ define(function(require, exports, module) {
 
 Transport 后每个模块都有自己的标识，即为 id。id 是由 idleading（标准格式为 `family/name/version`） 和文件名组成的。以下示例的 id 为 `arale/base/1.0.0/base`。
 
-```
+```js
 // base.js
 define(function(){});
 
@@ -97,4 +97,4 @@ define('arale/base/1.0.0/base', ['arale/class/1.0.0/class','arale/events/1.0.0/e
 3. 包的 id
 
     通过 spm 管理模块包，也需要定义 family，name 和 version。如 https://spmjs.org/arale/base/
-    
+

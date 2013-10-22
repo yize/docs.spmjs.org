@@ -1,7 +1,7 @@
-# 新手入门
+# 新手入门 [en](/en/)
 
 - pubdate: 2013-08-15
-- category: 新手入门
+- category: 开始
 - index: 1
 
 ---
@@ -41,8 +41,7 @@ spm 还提供一些插件，也欢迎更多插件开发者，[如何开发?](../
 
 ## 基本命令的使用视频
 
-<iframe src="http://ascii.io/a/2533/raw" frameborder="0" width="566" height="646"></iframe>
-
+<iframe style="margin-bottom:30px;" src="http://ascii.io/a/2533/raw" frameborder="0" width="566" height="646"></iframe>
 
 
 ## 贡献

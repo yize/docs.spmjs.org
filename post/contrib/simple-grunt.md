@@ -63,7 +63,7 @@ npm install -g grunt-cli
 
 * package.json:该文件用来为npm存放项目配置的元数据，与grunt关系最大的配置在devDependencies中。
 
-```
+```js
 "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-cmd-transport": "~0.2.0",
@@ -90,7 +90,7 @@ npm install grunt --save-dev
 
 一个几乎是`Gruntfile.js`通用的写法：
 
-```
+```js
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json');
@@ -104,7 +104,7 @@ module.exports = function(grunt) {
 
 下面我们来了解下任务（task）：
 
-```
+```js
 transport: {
     dialog: {
         files : [
@@ -123,7 +123,7 @@ transport: {
 
 下一个任务是合并(concat)：
 
-```
+```js
 concat: {
     dialog: {
         files: {
@@ -138,20 +138,20 @@ concat: {
 
 最后，加载`grunt`需要的插件：
 
-```
+```js
 grunt.loadNpmTasks('grunt-cmd-transport');
 grunt.loadNpmTasks('grunt-cmd-concat');
 ```
 
 还要告诉grunt该怎么执行这些任务：
 
-```
+```js
 grunt.registerTask('build', ['transport', 'concat']);
 ```
 
 完整的`Gruntfile.js`：
 
-```
+```js
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),

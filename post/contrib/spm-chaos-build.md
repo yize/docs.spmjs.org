@@ -115,7 +115,7 @@ npm install spm-chaos-build -g
 
 接着配置一下 package.json ，这里与 Spm2 的配置规则基本一致，不过只需要 output 和 alias 两个项即可，参考如下
 
-```
+```js
 {
     "spm" : {
         "output" : [
@@ -132,7 +132,7 @@ npm install spm-chaos-build -g
 Spm2 的 output 配置目前只能支持合并 **相对标识** 的模块，对于业务模块来说，有时候还是希望将 **顶级标识** 的模块也合并进来（Spm 1.x 里的 . 和 *）
 所以我做了一点扩展，还可以这样配置
 
-```
+```js
 "output" : {
     "relative" : [   // 只合并相对标识模块
         "blogs/new.js",

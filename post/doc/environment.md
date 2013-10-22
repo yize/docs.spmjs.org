@@ -1,7 +1,7 @@
 # Node 环境配置
 
 - pubdate: 2013-09-24
-- category: 新手入门
+- category: 开始 
 - index: 12
 
 ---
@@ -28,7 +28,7 @@ require 全局模块的时候会用到 `NODE_PATH`，会在配置的目录下搜
 
 如果你的 node 文件为 `/usr/local/bin/node`，那
 
-```
+```ini
 export PATH=/usr/local/bin:$PATH
 export NODE_PATH=/usr/local/lib/node_modules
 ```
@@ -77,7 +77,7 @@ git 下载地址如下
 
 下载 [Windows 的 Node](http://nodejs.org/download/) 并安装，如下配置环境变量
 
-```
+```ini
 PATH = C:\Users\{{username}}\AppData\Roaming\npm
 NODE_PATH = C:\Users\{{username}}\AppData\Roaming\npm\node_modules
 ```

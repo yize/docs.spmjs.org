@@ -1,4 +1,4 @@
-# SPM 配置文件
+# SPMRC 配置文件 [en](/en/config)
 
 - pubdate: 2013-09-10
 - category: 规范标准
@@ -25,7 +25,7 @@ spmrc 为 SPM 及其插件所使用的配置文件，文件为 `~/.spm/spmrc`，
 
 spmrc 是以 ini 形式存储的，结构如下
 
-```
+```ini
 [section1]
 name = property
 
@@ -39,7 +39,7 @@ name = property
 
 可指定一个 gruntfile 的路径，可以配置本地或远程的。
 
-```
+```ini
 [user]
 gruntfile =
 ```
@@ -58,7 +58,7 @@ gruntfile =
 
 用 source 来指定源，可以指定多个。
 
-```
+```ini
 [source:default]
 url = http://spmjs.org
 auth =
@@ -77,7 +77,7 @@ spm publish -s alipay
 
 可支持代理
 
-```
+```ini
 [source:default]
 url = http://spmjs.org
 proxy = username:password@proxy.server:port

@@ -10,7 +10,7 @@ spm 遵循 [Common Module Definition](https://github.com/spmjs/specification) �
 
 以下为 package.json 的示例
 
-```
+```js
 {
     "family": "arale",
     "name": "base",
@@ -81,7 +81,7 @@ PATCH 变更为 bugfix，MINOR 为非兼容的修改和功能新增，MAJOR 为�
 
 支持两种写法
 
-```
+```js
 "author": "Hsiaoming Yang <me@lepture.com>"
 
 "author": {
