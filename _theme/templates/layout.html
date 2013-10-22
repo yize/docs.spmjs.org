@@ -28,8 +28,7 @@
   </head>
   <body>
     <div class="navigation" role="navigation">
-      <div class="container">
-        <a class="home" href="{{content_url('index.html')}}">{{config.sitename}}</a>
+        <h1 class="home"><a href="{{content_url('index.html')}}">{{config.sitename}}</a></h1>
         {%- if config.navigation %}
         <div class="menu">
           {%- for item in config.navigation %}
@@ -37,11 +36,12 @@
           {%- endfor %}
         </div>
         {%- endif %}
-      </div>
     </div>
-    <div class="mainbody">
-      {%- block document %}{% endblock %}
-      {%- block sidebar %}{% endblock %}
+    <div id="color-bar"></div>
+
+    <div class="row clearfix">
+      <div class="column-left">{%- block sidebar %}{% endblock %}</div>
+      <div class="column-right">{%- block document %}{% endblock %}</div>
     </div>
     <div class="footer">
       {%- if config.footer %}
@@ -51,7 +51,11 @@
     </div>
     <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="{{static_url('one.js')}}"></script>
     {%- if config.github %}
-    <div class="github"><a class="github-link" href="{{config.github}}">Fork me on GitHub</a></div>
+    <div id="extra">
+        <a href="{{config.github}}" target="_blank">
+            <img src="https://i.alipayobjects.com/e/201211/1dbSqT9ykm.png" width="149" height="149" alt="Fork me on GitHub"></a>
+    </div>
+    <!--<div class="github"><a class="github-link" href="{{config.github}}">Fork me on GitHub</a></div>-->
     {%- endif %}
   </body>
 </html>
