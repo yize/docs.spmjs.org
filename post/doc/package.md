@@ -115,3 +115,50 @@ This is a way to prevent accidental publication of private repositories. But you
 ## spm
 
 这个字段是供 spm build 使用，请看[构建章节](/cli/build)。
+
+### alias
+
+用来配置模块的依赖，以及依赖的别名，打包时将会从此字段读取相关的依赖链信息。
+
+### devAlias
+
+配置开发中需要用到的模块的别名。
+
+### include
+
+打包策略，可选 `all`、`relative`、`self`，分别表示`打包所有依赖`、`打包相对依赖`、`自打包自身`，
+默认为 `relative`。详细的
+
+### output
+
+标识模块的输出文件，可以有多个。
+
+---
+
+例如：
+
+```js
+"spm": {
+  "include": "all",
+  "alias": {
+    "jquery": "jquery/jquery/1.7.2/jquery",
+    "base": "arale/base/1.0.0/base"
+  }
+  "devaAlias": {
+    "expect": "gallery/expect/0.2.1/expect"
+  }
+  "output": [
+    "index.js",
+    "example.js"
+  ]
+}
+```
+
+---
+
+
+# Old Time
+
+1. root is deprecated, use family instead.
+2. dependencies is deprecated, use spm.alias instead.
+3. output changed

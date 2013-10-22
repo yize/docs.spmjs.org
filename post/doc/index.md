@@ -24,12 +24,49 @@ spm 核心只有包管理功能，除此之外还提供了很多[插件](../cli/
 $ spm config source:default https://spmjs.org
 ```
 
-## 模块
+## 安装模块
+
+使用 spm 可以安装源上的任意模块到你的项目中，默认将安装到当前目录下的 sea-modules 目录中。
+
+```
+$ spm install seajs
+$ spm install jquery
+$ spm install arale/position@1.0.0
+```
+
+具体操作可参考 `spm help install`。
+
+当然你可以像 npm 一样，将你的依赖写到 [package.json](http://docs.spmjs.org/doc/package) 中去，然后使用 `spm install` 一键安装。
+
+## 初始化项目
+
+使用 [spm-init](http://docs.spmjs.org/cli/init) 命令可以初始化一个标准的 CMD 模块。
+
+```
+$ npm install spm-init -g
+$ spm init
+```
+
+## 模块构建
 
 spm 并没有限制模块的目录结构和组织方式，但是会有推荐的方式，可以先看下[标准模块](https://github.com/spmjs/spm-build/tree/master/examples/simple)和[自定义模块](https://github.com/spmjs/spm-build/tree/master/examples/simple-grunt)的示例。
 
 虽然模块的组织方式不同，但上线前都需要做 [transport](./transport.html) 处理，所以 spm 还提供了构建工具，也分为[标准构建](./spm-build.html)和[自定义构建](./grunt-build.html)两种。
 
+## 发布模块
+
+写好一个模块后，可以用以下命令发布你的模块到源上。
+
+```
+$ spm publish
+```
+
+在 spmjs.org 上，你需要先[注册](https://spmjs.org/account/signup)一个用户，然后在命令行中进行登录来获得发布的权限。
+你可以发布模块到自己注册的用户名（family）下。
+
+```
+$ spm login
+```
 
 ## 插件
 
