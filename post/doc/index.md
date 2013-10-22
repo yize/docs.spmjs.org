@@ -39,6 +39,12 @@ spm 还提供一些插件，也欢迎更多插件开发者，[如何开发?](../
 - [spm-init](../cli/init.html) 初始化模块
 - [spm-status](../cli/status.html) 检查线上 http 状态
 
+## 基本命令的使用视频
+
+<iframe src="http://ascii.io/a/2533/raw" frameborder="0" width="566" height="646"></iframe>
+
+
+
 ## 贡献
 
 我们非常欢迎加入我们的大家庭，一起来维护 spm，[如何贡献?](./contribute.html)

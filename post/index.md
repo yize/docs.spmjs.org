@@ -4,9 +4,32 @@
 
 --------
 <style>
-h1.entry-title {
-    visibility: hidden;
+body {
+    height: 600px;
+}
+h1.entry-title, .navigation, #color-bar, .footer, #extra {
+    display: none;
+}
+.row {
+    background: white;
+}
+#loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 300px;
+    height: 100px;
+    line-height: 100px;
+    margin-left: -100px;
+    margin-top: -50px;
+    color: #ccc;
+    font-size: 30px;
+    text-align: center;
 }
 </style>
 
-<iframe src="http://ascii.io/a/2533/raw" frameborder="0" width="566" height="646"></iframe>
+<div id="loading">Loading...</div>
+
+<script>
+window.location.href = '/doc/';
+</script>
