@@ -116,7 +116,7 @@ This is a way to prevent accidental publication of private repositories. But you
 
 ## spm
 
-这个字段是供 spm build 使用，请看[构建章节](/cli/build)。
+这个字段是供 spm build 使用，请看[构建章节](/doc/spm-build)。
 
 ### alias
 
