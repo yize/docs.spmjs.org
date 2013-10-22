@@ -35,19 +35,19 @@
       <div class="column-left">
 <div class="sidebar">
   <ul>
-    <li class="sidebar-category">新手入门</li>
-    <li><a href="./index">新手入门</a></li>
+    <li class="sidebar-category">开始</li>
+    <li><a href="./index">新手入门 <a href="/en/">en</a></a></li>
     <li class="sidebar-current"><a href="./environment">Node 环境配置</a></li>
   </ul>
   <ul>
     <li class="sidebar-category">规范标准</li>
-    <li><a href="./spm-global-config">SPM 配置文件</a></li>
+    <li><a href="./spm-global-config">SPMRC 配置文件 <a href="/en/config">en</a></a></li>
     <li><a href="./package">Package.json</a></li>
     <li><a href="./transport">Transport</a></li>
   </ul>
   <ul>
     <li class="sidebar-category">构建</li>
-    <li><a href="./spm-build">标准构建</a></li>
+    <li><a href="./spm-build">标准构建 <a href="/en/build">en</a></a></li>
     <li><a href="./build-task">构建过程详解</a></li>
   </ul>
   <ul>
@@ -75,8 +75,8 @@
 <p>require 全局模块的时候会用到 <code>NODE_PATH</code>，会在配置的目录下搜索模块，看看<a href="http://nodejs.org/api/modules.html#modules_loading_from_the_global_folders">官方说明</a>。</p>
 <p><code>NODE_PATH</code> 的配置一般都是相对于 bin 目录的，如 <code>/usr/local/lib/node_modules</code>。</p>
 <p>如果你的 node 文件为 <code>/usr/local/bin/node</code>，那</p>
-<pre>export PATH=/usr/local/bin:$PATH
-export NODE_PATH=/usr/local/lib/node_modules</pre><p>把他加到你的 <code>.bash_profile</code> 或 <code>.zshrc</code> 中。</p>
+<div class="highlight"><pre><code class="ini">export PATH=/usr/local/bin:$PATH
+export NODE_PATH=/usr/local/lib/node_modules</code></pre></div><p>把他加到你的 <code>.bash_profile</code> 或 <code>.zshrc</code> 中。</p>
 <h2 id="npm-prefix">npm prefix</h2><p>有时你会发现 npm 的安装目录和 <code>NODE_PATH</code> 不是同一个。npm install 会安装到 <code>/usr/local/share/npm/lib/node_modules</code>，但 <code>NODE_PATH</code> 为 <code>/usr/local/lib/node_modules</code>。</p>
 <p>这是因为你设置了 prefix (可能是编译的时候加的) 为 <code>/usr/local/share/npm</code>。</p>
 <p>查看 prefix</p>
@@ -92,8 +92,8 @@ export NODE_PATH=/usr/local/lib/node_modules</pre><p>把他加到你的 <code>.b
 </li>
 </ul>
 <h2 id="windows-环境">windows 环境</h2><p>下载 <a href="http://nodejs.org/download/">Windows 的 Node</a> 并安装，如下配置环境变量</p>
-<pre>PATH = C:\Users\{{username}}\AppData\Roaming\npm
-NODE_PATH = C:\Users\{{username}}\AppData\Roaming\npm\node_modules</pre><p>也可以试试 Windows 的包管理工具 <a href="https://github.com/chocolatey/chocolatey">chocolatey</a></p>
+<div class="highlight"><pre><code class="ini"><span class="setting">PATH = <span class="value">C:\Users\{{username}}\AppData\Roaming\npm</span></span>
+<span class="setting">NODE_PATH = <span class="value">C:\Users\{{username}}\AppData\Roaming\npm\node_modules</span></span></code></pre></div><p>也可以试试 Windows 的包管理工具 <a href="https://github.com/chocolatey/chocolatey">chocolatey</a></p>
 <p>安装 nodejs 和 git</p>
 <pre>c:\&gt; cinst git.install
 c:\&gt; cinst nodejs.install</pre></div>

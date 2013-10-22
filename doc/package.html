@@ -35,19 +35,19 @@
       <div class="column-left">
 <div class="sidebar">
   <ul>
-    <li class="sidebar-category">新手入门</li>
-    <li><a href="./index">新手入门</a></li>
+    <li class="sidebar-category">开始</li>
+    <li><a href="./index">新手入门 <a href="/en/">en</a></a></li>
     <li><a href="./environment">Node 环境配置</a></li>
   </ul>
   <ul>
     <li class="sidebar-category">规范标准</li>
-    <li><a href="./spm-global-config">SPM 配置文件</a></li>
+    <li><a href="./spm-global-config">SPMRC 配置文件 <a href="/en/config">en</a></a></li>
     <li class="sidebar-current"><a href="./package">Package.json</a></li>
     <li><a href="./transport">Transport</a></li>
   </ul>
   <ul>
     <li class="sidebar-category">构建</li>
-    <li><a href="./spm-build">标准构建</a></li>
+    <li><a href="./spm-build">标准构建 <a href="/en/build">en</a></a></li>
     <li><a href="./build-task">构建过程详解</a></li>
   </ul>
   <ul>
@@ -66,35 +66,35 @@
 
   <div class="entry-content"><p>spm 遵循 <a href="https://github.com/spmjs/specification">Common Module Definition</a> 的 <a href="https://github.com/spmjs/specification/blob/master/draft/package.md">packaging draft</a> 规范，每个模块必须有一个 package.json 文件来描述模块自身。</p>
 <p>以下为 package.json 的示例</p>
-<pre>{
-    &quot;family&quot;: &quot;arale&quot;,
-    &quot;name&quot;: &quot;base&quot;,
-    &quot;version&quot;: &quot;1.0.0&quot;,
-    &quot;description&quot;: &quot;base is ....&quot;,
-    &quot;keywords&quot;: [&quot;class&quot;],
-    &quot;author&quot;: &quot;Hsiaoming Yang &lt;me@lepture.com&gt;&quot;,
-    &quot;maintainer&quot;: [
-      &quot;Hsiaoming Yang &lt;me@lepture.com&gt;&quot;,
-      &quot;Haoliang Gao &lt;a@chuo.me&gt;&quot;
+<div class="highlight"><pre><code class="javascript">{
+    <span class="string">"family"</span>: <span class="string">"arale"</span>,
+    <span class="string">"name"</span>: <span class="string">"base"</span>,
+    <span class="string">"version"</span>: <span class="string">"1.0.0"</span>,
+    <span class="string">"description"</span>: <span class="string">"base is ...."</span>,
+    <span class="string">"keywords"</span>: [<span class="string">"class"</span>],
+    <span class="string">"author"</span>: <span class="string">"Hsiaoming Yang &lt;me@lepture.com&gt;"</span>,
+    <span class="string">"maintainer"</span>: [
+      <span class="string">"Hsiaoming Yang &lt;me@lepture.com&gt;"</span>,
+      <span class="string">"Haoliang Gao &lt;a@chuo.me&gt;"</span>
     ],
-    &quot;homepage&quot;: &quot;http://aralejs.org/base/&quot;,
-    &quot;repository&quot;: {
-        &quot;type&quot;: &quot;git&quot;,
-        &quot;url&quot;: &quot;https://github.com/aralejs/base.git&quot;
+    <span class="string">"homepage"</span>: <span class="string">"http://aralejs.org/base/"</span>,
+    <span class="string">"repository"</span>: {
+        <span class="string">"type"</span>: <span class="string">"git"</span>,
+        <span class="string">"url"</span>: <span class="string">"https://github.com/aralejs/base.git"</span>
     },
-    &quot;bugs&quot;: {
-        &quot;url&quot;: &quot;https://github.com/arale/overlay/issues&quot;
+    <span class="string">"bugs"</span>: {
+        <span class="string">"url"</span>: <span class="string">"https://github.com/arale/overlay/issues"</span>
     },
 
-    &quot;spm&quot;: {
-        &quot;source&quot;: &quot;src&quot;,
-        &quot;output&quot;: [&quot;base.js&quot;, &quot;i18n/*&quot;],
-        &quot;alias&quot;: {
-            &quot;class&quot;: &quot;arale/class/1.0.0/class&quot;,
-            &quot;events&quot;: &quot;arale/events/1.0.0/events&quot;
+    <span class="string">"spm"</span>: {
+        <span class="string">"source"</span>: <span class="string">"src"</span>,
+        <span class="string">"output"</span>: [<span class="string">"base.js"</span>, <span class="string">"i18n/*"</span>],
+        <span class="string">"alias"</span>: {
+            <span class="string">"class"</span>: <span class="string">"arale/class/1.0.0/class"</span>,
+            <span class="string">"events"</span>: <span class="string">"arale/events/1.0.0/events"</span>
         }
     }
-}</pre><p>对于 spm 来说 family、name 和 version 三个字段是必须的，标准的模块生成的路径应该是 <code>family/name/version/file</code>，比如 jquery 的路径为 <code>jquery/jquery/1.7.2/jquery</code>，虽然看起来有冗余，但非常清晰。</p>
+}</code></pre></div><p>对于 spm 来说 family、name 和 version 三个字段是必须的，标准的模块生成的路径应该是 <code>family/name/version/file</code>，比如 jquery 的路径为 <code>jquery/jquery/1.7.2/jquery</code>，虽然看起来有冗余，但非常清晰。</p>
 <p>package.json 中的 spm 字段是扩展字段，供 spm build 使用。</p>
 <h2 id="family-required">family (required)</h2><p>这个字段为源 (<a href="http://spmjs.org">http://spmjs.org</a>) 上的账户名，可指定一类模块，我们称之为「家族」。这个字段存在的原因是为了解决命名冲突的问题，灵感来源于 github。</p>
 <p>世界这么大，不同的人开发同名组件是很常有的事情，像 arale/events 和 popomore/events 可以并存。</p>
@@ -107,12 +107,12 @@
 <h2 id="keywords">keywords</h2><p>模块的关键字，为一个数组，可通过 spm search 搜索。</p>
 <h2 id="author">author</h2><p>模块的作者，也就是最初开发这个模块的人。</p>
 <p>支持两种写法</p>
-<pre>&quot;author&quot;: &quot;Hsiaoming Yang &lt;me@lepture.com&gt;&quot;
+<div class="highlight"><pre><code class="javascript"><span class="string">"author"</span>: <span class="string">"Hsiaoming Yang &lt;me@lepture.com&gt;"</span>
 
-&quot;author&quot;: {
-  &quot;name&quot;: &quot;Hsiaoming Yang&quot;,
-  &quot;email&quot;: &quot;me@lepture.com&quot;
-}</pre><h2 id="maintainer">maintainer</h2><p>后期模块的维护者或贡献者，为一个数组。</p>
+<span class="string">"author"</span>: {
+  <span class="string">"name"</span>: <span class="string">"Hsiaoming Yang"</span>,
+  <span class="string">"email"</span>: <span class="string">"me@lepture.com"</span>
+}</code></pre></div><h2 id="maintainer">maintainer</h2><p>后期模块的维护者或贡献者，为一个数组。</p>
 <h2 id="homepage">homepage</h2><p>模块的文档页面。</p>
 <h2 id="repository">repository</h2><p>模块的仓库。</p>
 <h2 id="bugs">bugs</h2><p>模块问题和讨论的链接。</p>

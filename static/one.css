@@ -66,7 +66,7 @@ a:hover {
   transition: all 0.6s ease;
 }
 .navigation .home a:hover {
-      color: transparent;
+  color: transparent;
   text-shadow: 0 0 3px #777;
 }
 .navigation .menu a {
@@ -131,12 +131,19 @@ a.title-permalink {
   margin-left: 4px;
   padding: 0 4px;
   text-decoration: none;
-  color: white;
-}
-a.title-permalink:hover {
   color: #5784bf;
-  background-color: #eee;
+  visibility: hidden;
 }
+
+.entry-content h1:hover a.title-permalink,
+.entry-content h2:hover a.title-permalink,
+.entry-content h3:hover a.title-permalink,
+.entry-content h4:hover a.title-permalink,
+.entry-content h5:hover a.title-permalink,
+.entry-content h6:hover a.title-permalink {
+    visibility: visible;
+}
+
 .footer {
   color: #555;
   padding: 10px 0;
@@ -161,4 +168,13 @@ a.title-permalink:hover {
     right: 0;
     border: 0;
     z-index: 11;
+}
+
+pre {
+    font-size: 14px;
+    padding: 0.4em 0.8em;
+}
+
+pre, code {
+    font-family: Consolas,"Liberation Mono",Courier,monospace!important;
 }

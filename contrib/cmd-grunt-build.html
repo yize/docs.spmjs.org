@@ -115,21 +115,21 @@ rootConfig.js                       -- 开发环境下使用的seajs配置文件
     },
     debug:<span class="number">1</span>
 });</code></pre></div><p>接下来我们来编写展示的页面<code>index.html</code>：</p>
-<pre>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot; /&gt;
-    &lt;title&gt;&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;input type=&quot;button&quot; id=&quot;btnDialog&quot; value=&quot;show me the money&quot;/&gt;
-&lt;script src=&quot;../../seajs/1.3.1/sea.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;../../rootConfig.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-    seajs.use(&quot;../../app/app1/index/src/index.js&quot;)
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</pre><p>这时候运行刚刚完成的<code>index.html</code>，一切顺利的话，应该已经可以看到弹窗的效果了。
+<div class="highlight"><pre><code class="xml"><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span><span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">id</span>=<span class="value">"btnDialog"</span> <span class="attribute">value</span>=<span class="value">"show me the money"</span>/&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"../../seajs/1.3.1/sea.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"../../rootConfig.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript">
+    seajs.use(<span class="string">"../../app/app1/index/src/index.js"</span>)
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></pre></div><p>这时候运行刚刚完成的<code>index.html</code>，一切顺利的话，应该已经可以看到弹窗的效果了。
 OK，前面的这些就是我们在开发阶段使用seajs的工作。接下来就是构建部分了。</p>
 <h2 id="构建">构建</h2><p><strong>package.json</strong></p>
 <p>首先，如果你不是最近才用seajs的话，应该对<code>package.json</code>不陌生，而且里面很可能也像我一样，定义了好多<code>alias</code>，
@@ -138,26 +138,26 @@ OK，前面的这些就是我们在开发阶段使用seajs的工作。接下来�
 <li><code>root</code>-&gt;<code>family</code></li>
 <li><code>alias</code>-&gt;<code>spm.alias</code></li>
 </ol>
-<pre>{
-    &quot;family&quot;: &quot;test&quot;,
-    &quot;version&quot;: &quot;0.0.1&quot;,
-    &quot;name&quot;: &quot;gruntTest&quot;,
-    &quot;spm&quot;: {
-        &quot;alias&quot;: {
-            &quot;jquery&quot;: &quot;gallery/jquery/1.8.2/jquery&quot;,
-            &quot;dialog&quot;: &quot;dist/styles/component/dialog/src/dialog&quot;
+<div class="highlight"><pre><code class="javascript">{
+    <span class="string">"family"</span>: <span class="string">"test"</span>,
+    <span class="string">"version"</span>: <span class="string">"0.0.1"</span>,
+    <span class="string">"name"</span>: <span class="string">"gruntTest"</span>,
+    <span class="string">"spm"</span>: {
+        <span class="string">"alias"</span>: {
+            <span class="string">"jquery"</span>: <span class="string">"gallery/jquery/1.8.2/jquery"</span>,
+            <span class="string">"dialog"</span>: <span class="string">"dist/styles/component/dialog/src/dialog"</span>
         }
     },
-    &quot;devDependencies&quot;: {
-        &quot;grunt&quot;: &quot;~0.4.1&quot;
+    <span class="string">"devDependencies"</span>: {
+        <span class="string">"grunt"</span>: <span class="string">"~0.4.1"</span>
     }
-}</pre><hr>
+}</code></pre></div><hr>
 <p><strong>Gruntfile.js</strong></p>
 <p>接下来该grunt介入了，先写下通用式：</p>
 <div class="highlight"><pre><code class="javascript">module.exports = <span class="function"><span class="keyword">function</span> <span class="params">(grunt)</span> {</span>
 };</code></pre></div><p>由于该示例有模块依赖了css，估计你的项目现在或以后也有这种情况。
 所以需要在<code>transport</code>的过程中对所依赖的css进行转换，以便seajs能加载一个类似这样的标签到页面中：</p>
-<pre>&lt;link charset=&quot;utf-8&quot; rel=&quot;stylesheet&quot; href=&quot;../styles/component/dialog/src/dialog_css.css&quot;&gt;</pre><p>seajs在<code>1.3.1</code>的版本中是将css文件也包装成一个js模块，以seajs.importStyle函数包裹原css内容。
+<div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"../styles/component/dialog/src/dialog_css.css"</span>&gt;</span></code></pre></div><p>seajs在<code>1.3.1</code>的版本中是将css文件也包装成一个js模块，以seajs.importStyle函数包裹原css内容。
 这样在执行importStyle函数时，向页面添加一个上面的<code>link</code>标签。</p>
 <p><em>ps：在新的2.0版本中，貌似该函数已从sea.js中剥离出来，形成一个单独的插件<code>style</code></em></p>
 <p>为了实现上述的转换需要引入这样的代码：</p>
@@ -251,22 +251,22 @@ styles : {
     }
 }</pre><p>有了上面自定义模块的构建基础，相信这里已经不需要我多余的解释了。那么马上看下业务模块的合并任务吧。</p>
 <p><strong>业务模块的<code>concat</code>任务：</strong></p>
-<pre>concat : {
+<div class="highlight"><pre><code class="javascript">concat : {
     app1 : {
         options : {
-            include : &#39;all&#39;
+            include : <span class="string">'all'</span>
         },
         files: [
             {
-                expand: true,
-                cwd: &#39;.build/&#39;,
-                src: [&#39;app/**/*.js&#39;],
-                dest: &#39;dist/&#39;,
-                ext: &#39;.js&#39;
+                expand: <span class="literal">true</span>,
+                cwd: <span class="string">'.build/'</span>,
+                src: [<span class="string">'app/**/*.js'</span>],
+                dest: <span class="string">'dist/'</span>,
+                ext: <span class="string">'.js'</span>
             }
         ]
     }
-}</pre><p>照例说明下<code>options</code>：</p>
+}</code></pre></div><p>照例说明下<code>options</code>：</p>
 <ul>
 <li>include：由于是业务模块，理想的状况是除了seajs本身，我们就只需要业务相关的js及其所有依赖。那么all就是将所有依赖全都合并成一个文件。</li>
 </ul>
@@ -313,7 +313,7 @@ clean : {
 <hr>
 <p>最后的最后，将调试用的<code>rootConfig.js</code>去掉，然后页面中的<code>index.js</code>路径替换成构建好的js，路径中app前面的部分一般都是以<code>php</code>,<code>java</code>等变量代替，
 这样只需要在变量中定义好上线路径，前端基本就不需要在项目上线的时候关心这里啦：）</p>
-<pre>seajs.use(&quot;../../dist/app/app1/index/src/index.js&quot;)</pre><hr>
+<div class="highlight"><pre><code class="javascript">seajs.use(<span class="string">"../../dist/app/app1/index/src/index.js"</span>)</code></pre></div><hr>
 <p><strong>最后感谢seajs,spm,grunt，让我的前端工作变得更轻松了。</strong></p>
 <p>以下是完整的<code>Gruntfile.js</code>：</p>
 <div class="highlight"><pre><code class="javascript">module.exports = <span class="function"><span class="keyword">function</span> <span class="params">(grunt)</span> {</span>

@@ -85,61 +85,61 @@
 <ul>
 <li>package.json:该文件用来为npm存放项目配置的元数据，与grunt关系最大的配置在devDependencies中。</li>
 </ul>
-<pre>&quot;devDependencies&quot;: {
-    &quot;grunt&quot;: &quot;~0.4.1&quot;,
-    &quot;grunt-cmd-transport&quot;: &quot;~0.2.0&quot;,
-    &quot;grunt-cmd-concat&quot;: &quot;~0.2.0&quot;,
-    &quot;grunt-contrib-uglify&quot;: &quot;~0.2.0&quot;,
-    &quot;grunt-contrib-clean&quot;: &quot;~0.4.0&quot;
-}</pre><ul>
+<div class="highlight"><pre><code class="javascript"><span class="string">"devDependencies"</span>: {
+    <span class="string">"grunt"</span>: <span class="string">"~0.4.1"</span>,
+    <span class="string">"grunt-cmd-transport"</span>: <span class="string">"~0.2.0"</span>,
+    <span class="string">"grunt-cmd-concat"</span>: <span class="string">"~0.2.0"</span>,
+    <span class="string">"grunt-contrib-uglify"</span>: <span class="string">"~0.2.0"</span>,
+    <span class="string">"grunt-contrib-clean"</span>: <span class="string">"~0.4.0"</span>
+}</code></pre></div><ul>
 <li>Gruntfile.js:注意G的大写，这个文件就是<code>grunt</code>的配置了，其中详细定义了每个任务的细节和执行任务的顺序等。</li>
 </ul>
 <p><strong>安装grunt</strong></p>
 <p>在命令行进入项目所在目录，键入如下命令即可，<code>npm</code>会根据<code>devDependencies</code>中的配置，将需要的<code>grunt</code>及其插件下载到你的项目目录中。</p>
 <pre>npm install grunt --save-dev</pre><h2 id="传说中简单的配置t-t">传说中简单的配置T-T</h2><p>终于到了简单配置环节，就从<code>Gruntfile.js</code>入手，一点点的认识<code>grunt</code>。</p>
 <p>一个几乎是<code>Gruntfile.js</code>通用的写法：</p>
-<pre>module.exports = function(grunt) {
+<div class="highlight"><pre><code class="javascript">module.exports = <span class="keyword">function</span>(grunt) {
   grunt.initConfig({
-    pkg: grunt.file.readJSON(&#39;package.json&#39;);
+    pkg: grunt.file.readJSON(<span class="string">'package.json'</span>);
   });
-};</pre><p>由于篇幅关系，这里只简单说下。<code>grunt</code>配置的主体都在<code>grunt.initConfig</code>中</p>
+};</code></pre></div><p>由于篇幅关系，这里只简单说下。<code>grunt</code>配置的主体都在<code>grunt.initConfig</code>中</p>
 <p><code>pkg: grunt.file.readJSON(&#39;package.json&#39;)</code>是为了以后在其它任务（task）中方便读取<code>package.json</code>已经定义好的值。</p>
 <p>下面我们来了解下任务（task）：</p>
-<pre>transport: {
+<div class="highlight"><pre><code class="javascript">transport: {
     dialog: {
         files : [
             {
-                src : &#39;*&#39;,
-                dest : &#39;.build/styles/component/dialog/src&#39;
+                src : <span class="string">'*'</span>,
+                dest : <span class="string">'.build/styles/component/dialog/src'</span>
             }
         ]
     }
-}</pre><p><code>transport</code>就是一个任务（task），她是这次<code>spm2</code>所提供的一系列<code>grunt</code>构建插件的其中一个，该插件主要负责提取模块中的依赖，
+}</code></pre></div><p><code>transport</code>就是一个任务（task），她是这次<code>spm2</code>所提供的一系列<code>grunt</code>构建插件的其中一个，该插件主要负责提取模块中的依赖，
 并为每个模块设置<code>模块ID</code>。<code>dialog</code>是任务的其中一个目标（Target），<code>files</code>中定义了要对哪些文件执行该任务（src），
 以及执行任务后，生成的文件放在什么地方(dest)。</p>
 <p>下一个任务是合并(concat)：</p>
-<pre>concat: {
+<div class="highlight"><pre><code class="javascript">concat: {
     dialog: {
         files: {
-            &quot;dist/styles/component/dialog/src/dialog.js&quot;: [&quot;.build/styles/component/dialog/src/dialog.js&quot;]
+            <span class="string">"dist/styles/component/dialog/src/dialog.js"</span>: [<span class="string">".build/styles/component/dialog/src/dialog.js"</span>]
         }
     }
-}</pre><p><code>concat</code>的内容是合并依赖的模块，有很多需要设置的地方，因为本文档目的只是介绍<code>grunt</code>，
+}</code></pre></div><p><code>concat</code>的内容是合并依赖的模块，有很多需要设置的地方，因为本文档目的只是介绍<code>grunt</code>，
 所以这里简单说，该配置采用了另外一种<code>src</code>和<code>dest</code>的写法。相信大家只要理解了任务（task）和目标（target）后应该很好理解。</p>
 <p>最后，加载<code>grunt</code>需要的插件：</p>
-<pre>grunt.loadNpmTasks(&#39;grunt-cmd-transport&#39;);
-grunt.loadNpmTasks(&#39;grunt-cmd-concat&#39;);</pre><p>还要告诉grunt该怎么执行这些任务：</p>
-<pre>grunt.registerTask(&#39;build&#39;, [&#39;transport&#39;, &#39;concat&#39;]);</pre><p>完整的<code>Gruntfile.js</code>：</p>
-<pre>module.exports = function(grunt) {
+<div class="highlight"><pre><code class="javascript">grunt.loadNpmTasks(<span class="string">'grunt-cmd-transport'</span>);
+grunt.loadNpmTasks(<span class="string">'grunt-cmd-concat'</span>);</code></pre></div><p>还要告诉grunt该怎么执行这些任务：</p>
+<div class="highlight"><pre><code class="javascript">grunt.registerTask(<span class="string">'build'</span>, [<span class="string">'transport'</span>, <span class="string">'concat'</span>]);</code></pre></div><p>完整的<code>Gruntfile.js</code>：</p>
+<div class="highlight"><pre><code class="javascript">module.exports = <span class="keyword">function</span>(grunt) {
     grunt.initConfig({
-        pkg: grunt.file.readJSON(&#39;package.json&#39;),
+        pkg: grunt.file.readJSON(<span class="string">'package.json'</span>),
 
         transport: {
             dialog: {
                 files : [
                     {
-                        src : &#39;*&#39;,
-                        dest : &#39;.build/styles/component/dialog/src&#39;
+                        src : <span class="string">'*'</span>,
+                        dest : <span class="string">'.build/styles/component/dialog/src'</span>
                     }
                 ]
             }
@@ -147,17 +147,17 @@ grunt.loadNpmTasks(&#39;grunt-cmd-concat&#39;);</pre><p>还要告诉grunt该怎�
         concat: {
             dialog: {
                 files: {
-                    &quot;dist/styles/component/dialog/src/dialog.js&quot;: [&quot;.build/styles/component/dialog/src/dialog.js&quot;]
+                    <span class="string">"dist/styles/component/dialog/src/dialog.js"</span>: [<span class="string">".build/styles/component/dialog/src/dialog.js"</span>]
                 }
             }
         }
     });
 
-    grunt.loadNpmTasks(&#39;grunt-cmd-transport&#39;);
-    grunt.loadNpmTasks(&#39;grunt-cmd-concat&#39;);
+    grunt.loadNpmTasks(<span class="string">'grunt-cmd-transport'</span>);
+    grunt.loadNpmTasks(<span class="string">'grunt-cmd-concat'</span>);
 
-    grunt.registerTask(&#39;build&#39;, [&#39;transport&#39;, &#39;concat&#39;]);
-};</pre><p>最后的最后，进入项目所在目录，命令行输入：</p>
+    grunt.registerTask(<span class="string">'build'</span>, [<span class="string">'transport'</span>, <span class="string">'concat'</span>]);
+};</code></pre></div><p>最后的最后，进入项目所在目录，命令行输入：</p>
 <pre>grunt build</pre><p>一切顺利的话，你就可以看到变化了！</p>
 </div>
 </div>

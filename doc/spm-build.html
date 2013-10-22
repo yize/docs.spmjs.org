@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="generator" content="nico 0.4.6">
     <meta name="theme" content="spm 0.1">
-    <title>标准构建</title>
+    <title>标准构建 <a href="/en/build">en</a></title>
     <link rel="stylesheet" href="../static/one.css" />
     <link rel="stylesheet" href="../static/syntax.css" />
     <script type="text/javascript">
@@ -35,19 +35,19 @@
       <div class="column-left">
 <div class="sidebar">
   <ul>
-    <li class="sidebar-category">新手入门</li>
-    <li><a href="./index">新手入门</a></li>
+    <li class="sidebar-category">开始</li>
+    <li><a href="./index">新手入门 <a href="/en/">en</a></a></li>
     <li><a href="./environment">Node 环境配置</a></li>
   </ul>
   <ul>
     <li class="sidebar-category">规范标准</li>
-    <li><a href="./spm-global-config">SPM 配置文件</a></li>
+    <li><a href="./spm-global-config">SPMRC 配置文件 <a href="/en/config">en</a></a></li>
     <li><a href="./package">Package.json</a></li>
     <li><a href="./transport">Transport</a></li>
   </ul>
   <ul>
     <li class="sidebar-category">构建</li>
-    <li class="sidebar-current"><a href="./spm-build">标准构建</a></li>
+    <li class="sidebar-current"><a href="./spm-build">标准构建 <a href="/en/build">en</a></a></li>
     <li><a href="./build-task">构建过程详解</a></li>
   </ul>
   <ul>
@@ -58,7 +58,7 @@
 </div>
       <div class="column-right">
 <div class="hentry typo">
-  <h1 class="entry-title">标准构建</h1>
+  <h1 class="entry-title">标准构建 <a href="/en/build">en</a></h1>
   <div class="entry-toc">
     <h3>Table of Contents</h3>
     <ul><li><a href="#如何构建">如何构建</a></li><li><a href="#构建的配置">构建的配置</a><ul><li><a href="#alias">alias</a></li><li><a href="#output">output</a></li><li><a href="#include">include</a></li><li><a href="#stylebox">styleBox</a></li></ul></ul>
@@ -71,44 +71,44 @@
   | - a.js
   ` - b.js
 ` - package.json</pre><p>静态文件</p>
-<pre>// a.js
-define(function() {
-  require(&#39;class&#39;);
-  console.log(&#39;a&#39;);
+<div class="highlight"><pre><code class="javascript"><span class="comment">// a.js</span>
+define(<span class="keyword">function</span>() {
+  require(<span class="string">'class'</span>);
+  console.log(<span class="string">'a'</span>);
 });
 
-// b.js
-define(function(require) {
-  require(&#39;./a&#39;);
-  console.log(&#39;b&#39;);
-});</pre><p>Package.json 除了<a href="">标准字段</a>外还要添加 spm 字段用于构建的配置。</p>
-<pre>{
-  &quot;family&quot;: &quot;arale&quot;,
-  &quot;name&quot;: &quot;test&quot;,
-  &quot;version&quot;: &quot;1.0.0&quot;,
-  &quot;spm&quot;: {
-    &quot;alias&quot;: {
-      &quot;class&quot;: &quot;arale/class/1.0.0/class&quot;
+<span class="comment">// b.js</span>
+define(<span class="keyword">function</span>(require) {
+  require(<span class="string">'./a'</span>);
+  console.log(<span class="string">'b'</span>);
+});</code></pre></div><p>Package.json 除了<a href="">标准字段</a>外还要添加 spm 字段用于构建的配置。</p>
+<div class="highlight"><pre><code class="javascript">{
+  <span class="string">"family"</span>: <span class="string">"arale"</span>,
+  <span class="string">"name"</span>: <span class="string">"test"</span>,
+  <span class="string">"version"</span>: <span class="string">"1.0.0"</span>,
+  <span class="string">"spm"</span>: {
+    <span class="string">"alias"</span>: {
+      <span class="string">"class"</span>: <span class="string">"arale/class/1.0.0/class"</span>
     },
-    &quot;output&quot;: [&quot;a.js&quot;, &quot;b.js&quot;]
+    <span class="string">"output"</span>: [<span class="string">"a.js"</span>, <span class="string">"b.js"</span>]
   }
-}</pre><p>运行 <code>spm build</code> 后会在 dist 目录生成4个文件（output 指定的两个文件以及对应的 -debug 文件）</p>
-<pre>// a-debug.js
-define(&quot;arale/test/1.0.0/a-debug&quot;, [ &quot;arale/class/1.0.0/class-debug&quot; ], function() {
-    require(&quot;arale/class/1.0.0/class-debug&quot;);
-    console.log(&quot;a&quot;);
+}</code></pre></div><p>运行 <code>spm build</code> 后会在 dist 目录生成4个文件（output 指定的两个文件以及对应的 -debug 文件）</p>
+<div class="highlight"><pre><code class="javascript"><span class="comment">// a-debug.js</span>
+define(<span class="string">"arale/test/1.0.0/a-debug"</span>, [ <span class="string">"arale/class/1.0.0/class-debug"</span> ], <span class="keyword">function</span>() {
+    require(<span class="string">"arale/class/1.0.0/class-debug"</span>);
+    console.log(<span class="string">"a"</span>);
 });
 
 
-// b-debug.js
-define(&quot;arale/test/1.0.0/b-debug&quot;, [ &quot;./a-debug&quot;, &quot;arale/class/1.0.0/class-debug&quot; ], function(require) {
-    require(&quot;./a-debug&quot;);
-    console.log(&quot;b&quot;);
+<span class="comment">// b-debug.js</span>
+define(<span class="string">"arale/test/1.0.0/b-debug"</span>, [ <span class="string">"./a-debug"</span>, <span class="string">"arale/class/1.0.0/class-debug"</span> ], <span class="keyword">function</span>(require) {
+    require(<span class="string">"./a-debug"</span>);
+    console.log(<span class="string">"b"</span>);
 });
-define(&quot;arale/test/1.0.0/a-debug&quot;, [ &quot;arale/class/1.0.0/class-debug&quot; ], function() {
-    require(&quot;arale/class/1.0.0/class-debug&quot;);
-    console.log(&quot;a&quot;);
-});</pre><p>spm build 到底做了什么？</p>
+define(<span class="string">"arale/test/1.0.0/a-debug"</span>, [ <span class="string">"arale/class/1.0.0/class-debug"</span> ], <span class="keyword">function</span>() {
+    require(<span class="string">"arale/class/1.0.0/class-debug"</span>);
+    console.log(<span class="string">"a"</span>);
+});</code></pre></div><p>spm build 到底做了什么？</p>
 <p>首先会对每个 CMD 模块进行 transport 转换</p>
 <ol>
 <li>生成 id，package.json 要配置 family、name、version 这三个字段</li>
@@ -118,45 +118,45 @@ define(&quot;arale/test/1.0.0/a-debug&quot;, [ &quot;arale/class/1.0.0/class-deb
 <p>其次通过配置对模块进行合并(concat)操作，具体查看 <a href="#include">include</a> 配置。</p>
 <p>以上就是 CMD 构建的核心，所以封装了 <a href="https://github.com/spmjs/grunt-cmd-transport">transport</a> 和 <a href="https://github.com/spmjs/grunt-cmd-concat">concat</a>，如需要深入了解构建过程，可继续阅读<a href="./build-task">构建详解</a>。</p>
 <h2 id="构建的配置">构建的配置</h2><h3 id="alias">alias</h3><p>这个和 seajs.config 的 alias 一样，配置如下</p>
-<pre>&quot;spm&quot;: {
-  &quot;alias&quot;: {
-    &quot;base&quot;: &quot;arale/base/1.0.0/base&quot;
+<div class="highlight"><pre><code class="javascript"><span class="string">"spm"</span>: {
+  <span class="string">"alias"</span>: {
+    <span class="string">"base"</span>: <span class="string">"arale/base/1.0.0/base"</span>
   }
-}</pre><p>在构建过程中会将 require 的值替换成 alias 中的值</p>
-<pre>require(&#39;base&#39;)
+}</code></pre></div><p>在构建过程中会将 require 的值替换成 alias 中的值</p>
+<div class="highlight"><pre><code class="javascript">require(<span class="string">'base'</span>)
 =&gt;
-require(&#39;arale/base/1.0.0/base&#39;)</pre><p>如果在 alias 中找不到则不会处理，但会有 warn 提示。如不希望替换也无提示可如下配置</p>
-<pre>&quot;spm&quot;: {
-  &quot;alias&quot;: {
-    &quot;base&quot;: &quot;base&quot;
+require(<span class="string">'arale/base/1.0.0/base'</span>)</code></pre></div><p>如果在 alias 中找不到则不会处理，但会有 warn 提示。如不希望替换也无提示可如下配置</p>
+<div class="highlight"><pre><code class="javascript"><span class="string">"spm"</span>: {
+  <span class="string">"alias"</span>: {
+    <span class="string">"base"</span>: <span class="string">"base"</span>
   }
 }
 
-require(&#39;base&#39;) //不会替换</pre><h3 id="output">output</h3><p>通过 output 指定输出的文件，只有指定的文件才会输出到 dist 目录下</p>
-<pre>// a.js
-define(function(require) {
-    require(&#39;./b&#39;)
+require(<span class="string">'base'</span>) <span class="comment">//不会替换</span></code></pre></div><h3 id="output">output</h3><p>通过 output 指定输出的文件，只有指定的文件才会输出到 dist 目录下</p>
+<div class="highlight"><pre><code class="javascript"><span class="comment">// a.js</span>
+define(<span class="keyword">function</span>(require) {
+    require(<span class="string">'./b'</span>)
 });
 
-// b.js
-define(function(require) {
-    require(&#39;./c&#39;)
+<span class="comment">// b.js</span>
+define(<span class="keyword">function</span>(require) {
+    require(<span class="string">'./c'</span>)
 });
 
-// c.js
-define(function(require) {
-});</pre><p>package.json</p>
-<pre>&quot;output&quot;: [&quot;a.js&quot;, &quot;c.js&quot;]</pre><p>最终会生成 <code>dist/a.js</code> 和 <code>dist/c.js</code>，<code>dist/a.js</code> 会包括 <code>a.js</code> <code>b.js</code> <code>c.js</code>，<code>dist/c.js</code> 只包括 <code>c.js</code>。</p>
+<span class="comment">// c.js</span>
+define(<span class="keyword">function</span>(require) {
+});</code></pre></div><p>package.json</p>
+<div class="highlight"><pre><code class="javascript"><span class="string">"output"</span>: [<span class="string">"a.js"</span>, <span class="string">"c.js"</span>]</code></pre></div><p>最终会生成 <code>dist/a.js</code> 和 <code>dist/c.js</code>，<code>dist/a.js</code> 会包括 <code>a.js</code> <code>b.js</code> <code>c.js</code>，<code>dist/c.js</code> 只包括 <code>c.js</code>。</p>
 <h3 id="include">include</h3><p>构建的时候会打包相对的模块，这是由 include 属性决定的，默认为 <code>&quot;include&quot;: &quot;relative&quot;</code></p>
-<pre>require(&#39;./b&#39;); &lt;= 相对依赖，会打包进来
-require(&#39;base&#39;); &lt;= 外部依赖，不会打包进来</pre><p>如果想打包所有的依赖可以如下配置 package.json，会把外部依赖（包括依赖的依赖）也打包进文件。</p>
-<pre>&quot;spm&quot;: {
-  &quot;include&quot;: &quot;all&quot;
-}</pre><h3 id="stylebox">styleBox</h3><p>样式隔离方案，具体功能见 <a href="https://github.com/aliceui/aliceui.org/issues/9">aliceui/aliceui.org#9</a></p>
+<div class="highlight"><pre><code class="javascript">require(<span class="string">'./b'</span>); <span class="xml"><span class="tag">&lt;<span class="title">=</span> 相对依赖，会打包进来
+<span class="attribute">require</span>('<span class="attribute">base</span>'); &lt;= 外部依赖，不会打包进来</span></code></pre></div><p>如果想打包所有的依赖可以如下配置 package.json，会把外部依赖（包括依赖的依赖）也打包进文件。</p>
+<div class="highlight"><pre><code class="javascript"><span class="string">"spm"</span>: {
+  <span class="string">"include"</span>: <span class="string">"all"</span>
+}</code></pre></div><h3 id="stylebox">styleBox</h3><p>样式隔离方案，具体功能见 <a href="https://github.com/aliceui/aliceui.org/issues/9">aliceui/aliceui.org#9</a></p>
 <p>在 package.json 中添加如下属性就可以启动样式隔离。spm build 时会帮你把 JS 中 require 的样式进行封装。</p>
-<pre>&quot;spm&quot;: {
-  &quot;styleBox&quot;: true
-}</pre><blockquote>
+<div class="highlight"><pre><code class="javascript"><span class="string">"spm"</span>: {
+  <span class="string">"styleBox"</span>: <span class="literal">true</span>
+}</code></pre></div><blockquote>
 <p>注：需要配合 <a href="http://aralejs.org/widget">arale/widget@1.1.0+</a> 进行使用。</p>
 </blockquote>
 </div>

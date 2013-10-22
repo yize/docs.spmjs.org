@@ -115,27 +115,27 @@
 然后安装 Spm2 和这个插件</p>
 <pre>npm install spm -g
 npm install spm-chaos-build -g</pre><p>接着配置一下 package.json ，这里与 Spm2 的配置规则基本一致，不过只需要 output 和 alias 两个项即可，参考如下</p>
-<pre>{
-    &quot;spm&quot; : {
-        &quot;output&quot; : [
-            &quot;blogs/new.js&quot;,
-            &quot;users/index.js&quot;
+<div class="highlight"><pre><code class="javascript">{
+    <span class="string">"spm"</span> : {
+        <span class="string">"output"</span> : [
+            <span class="string">"blogs/new.js"</span>,
+            <span class="string">"users/index.js"</span>
         ],
-        &quot;alias&quot; : {
-            &quot;$&quot; : &quot;gallery/jquery/1.9.1/jquery&quot;,
+        <span class="string">"alias"</span> : {
+            <span class="string">"$"</span> : <span class="string">"gallery/jquery/1.9.1/jquery"</span>,
         }
     }
-}</pre><p>Spm2 的 output 配置目前只能支持合并 <strong>相对标识</strong> 的模块，对于业务模块来说，有时候还是希望将 <strong>顶级标识</strong> 的模块也合并进来（Spm 1.x 里的 . 和 *）
+}</code></pre></div><p>Spm2 的 output 配置目前只能支持合并 <strong>相对标识</strong> 的模块，对于业务模块来说，有时候还是希望将 <strong>顶级标识</strong> 的模块也合并进来（Spm 1.x 里的 . 和 *）
 所以我做了一点扩展，还可以这样配置</p>
-<pre>&quot;output&quot; : {
-    &quot;relative&quot; : [   // 只合并相对标识模块
-        &quot;blogs/new.js&quot;,
-        &quot;users/index.js&quot;
+<div class="highlight"><pre><code class="javascript"><span class="string">"output"</span> : {
+    <span class="string">"relative"</span> : [   <span class="comment">// 只合并相对标识模块</span>
+        <span class="string">"blogs/new.js"</span>,
+        <span class="string">"users/index.js"</span>
     ],
-    &quot;all&quot; : [   // 合并相对标识和顶级标识的模块
-        &quot;base/handlebars.js&quot;
+    <span class="string">"all"</span> : [   <span class="comment">// 合并相对标识和顶级标识的模块</span>
+        <span class="string">"base/handlebars.js"</span>
     ]
-},</pre><p>配置完之后，到 /js 目录下执行命令</p>
+},</code></pre></div><p>配置完之后，到 /js 目录下执行命令</p>
 <pre>cd js
 spm chaos-build example -C seajs-config.js</pre><p>解释一下，example 是业务模块的目录名，-C 参数用于指定 SeaJS 的配置文件以便打包完之后修改此文件（上面第4步）
 如果你的标准模块目录不叫 sea-modules ，那么可以用 -O 参数自定义</p>
