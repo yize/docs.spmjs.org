@@ -1,4 +1,4 @@
-# SPMRC 配置文件
+# spmrc 配置文件
 
 - pubdate: 2013-09-10
 - category: 规范标准
