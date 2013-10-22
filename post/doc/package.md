@@ -145,10 +145,10 @@ This is a way to prevent accidental publication of private repositories. But you
   "alias": {
     "jquery": "jquery/jquery/1.7.2/jquery",
     "base": "arale/base/1.0.0/base"
-  }
+  },
   "devaAlias": {
     "expect": "gallery/expect/0.2.1/expect"
-  }
+  },
   "output": [
     "index.js",
     "example.js"
