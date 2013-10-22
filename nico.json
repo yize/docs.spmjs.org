@@ -2,7 +2,7 @@
   "source": "post",
   "output": "_site",
   "permalink": "{{directory}}/{{filename}}",
-  "sitename": "SpmJS",
+  "sitename": "spmjs",
   "github": "https://github.com/spmjs/spm2",
   "google": "UA-38943643-2",
   "navigation": [
