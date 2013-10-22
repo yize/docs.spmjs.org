@@ -1,4 +1,4 @@
-# SPMRC 配置文件 [en](/en/config)
+# SPMRC 配置文件
 
 - pubdate: 2013-09-10
 - category: 规范标准

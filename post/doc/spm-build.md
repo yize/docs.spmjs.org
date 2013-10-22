@@ -1,4 +1,4 @@
-# 标准构建 [en](/en/build)
+# 标准构建
 
 - pubdate: 2013-08-15
 - category: 构建
