@@ -36,7 +36,7 @@
 <div class="sidebar">
   <ul>
     <li class="sidebar-category">高层 API</li>
-    <li class="sidebar-current"><a href="./index">总述</a></li>
+    <li><a href="./index">总述</a></li>
     <li><a href="./config">spm.config</a></li>
     <li><a href="./log">spm.log</a></li>
     <li><a href="./install">spm.install</a></li>
@@ -45,7 +45,7 @@
   </ul>
   <ul>
     <li class="sidebar-category">低层 API</li>
-    <li><a href="./sdk">总述</a></li>
+    <li class="sidebar-current"><a href="./sdk">总述</a></li>
     <li><a href="./yuan">yuan</a></li>
     <li><a href="./grunt">grunt</a></li>
   </ul>
@@ -60,21 +60,19 @@
   <h1 class="entry-title">总述</h1>
   <div class="entry-toc">
     <h3>Table of Contents</h3>
-    <ul><li><a href="#关系">关系</a></li><li><a href="#如何引入">如何引入</a></li><li><a href="#查看当前版本">查看当前版本</a></li></ul>
+    <ul><li><a href="#spm-sdk">spm.sdk</a></li></ul>
   </div>
 
-  <div class="entry-content"><p>SPM 的 API 说明.</p>
-<hr>
-<h2 id="关系">关系</h2><p>SPM 系统中, 一共有三大部分:</p>
+  <div class="entry-content"><p>一般来说, 使用前面的高层 API 就已经够用了. 但有时如果没法满足需求的, 可以尝试使用下这里列出的较低层 API.</p>
+<h2 id="spm-sdk">spm.sdk</h2><p>低层 API</p>
 <ul>
-<li><a href="https://github.com/spmjs/spm2">spm</a>: 提供了发布, 查找等基本的功能. 其他功能则通过插件形式提供, 如 spm-build, spm-init.</li>
-<li><a href="https://github.com/spmjs/spm-grunt">grunt</a>: SPM 对 grunt 稍加修改, 名为 <a href="https://github.com/spmjs/spm-grunt">spm-grunt</a>, 你基本上可以把它当成 grunt 一样使用.</li>
-<li><a href="/api/yuan">yuan</a>: 封装了对远程源服务器操作的 js 接口.</li>
+<li><a href="https://github.com/spmjs/cmd-util/blob/master/docs/ast.md"><code>spm.sdk.ast</code></a></li>
+<li><a href="https://github.com/spmjs/cmd-util/blob/master/docs/iduri.md"><code>spm.sdk.iduri</code></a></li>
+<li><a href="https://github.com/spmjs/spmrc"><code>spm.sdk.spmrc</code></a></li>
+<li><a href="./yuan"><code>spm.sdk.yuan</code></a></li>
+<li><a href="./grunt"><code>spm.sdk.grunt</code></a></li>
 </ul>
-<h2 id="如何引入">如何引入</h2><p>SPM 是一个标准 nodejs 模块, 所以在安装好 SPM 之后, 只需要通过 <code>require</code> 就可引入 SPM 这个模块.</p>
-<div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> spm = require(<span class="string">'spm'</span>)</code></pre></div><h2 id="查看当前版本">查看当前版本</h2><p><code>spm.version</code> 中包含 SPM 的版本信息.</p>
-<pre>&gt; spm.version
-&#39;2.1.11&#39;</pre></div>
+</div>
 </div>
 </div>
     </div>

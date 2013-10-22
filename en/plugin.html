@@ -22,18 +22,22 @@
   </head>
   <body>
     <div class="navigation" role="navigation">
-      <div class="container">
-        <a class="home" href="../">SPM</a>
+        <h1 class="home"><a href="../">SpmJS</a></h1>
         <div class="menu">
-          <a href="../contrib/">贡献文档</a>
-          <a href="./">Documentation</a>
-          <a href="../api/">API</a>
-          <a href="../cli/">Manual</a>
+          <a href="../doc/">使用文档</a>
+          <a href="../cli/config">命令集</a>
+          <a href="../api/">开发者文档</a>
         </div>
-      </div>
     </div>
-    <div class="mainbody">
-<div class="hentry">
+    <div id="color-bar"></div>
+
+    <div class="row clearfix">
+      <div class="column-left">
+<div class="sidebar">
+</div>
+</div>
+      <div class="column-right">
+<div class="hentry typo">
   <h1 class="entry-title">Plugin</h1>
   <div class="entry-toc">
     <h3>Table of Contents</h3>
@@ -86,28 +90,17 @@ spm.plugin.uninstall(<span class="string">'init'</span>)</code></pre></div><p>Ma
 
 </pre><h2 id="plugins">Plugins</h2><p>You can find some offical plugins on <a href="https://github.com/spmjs">github</a>.</p>
 </div>
-  <div class="entry-meta">
-    <time class="updated" datetime="2013-03-20T00:00:00.000Z">2013-03-20</time>
-  </div>
 </div>
-
-<div class="sidebar">
-  <h2 class="sidebar-title">Documentation</h2>
-  <ul>
-    <li><a href="./index">spm</a></li>
-    <li><a href="./build">Build</a></li>
-    <li><a href="./config">Config</a></li>
-    <li><a href="./install">Install</a></li>
-    <li><a href="./package">package.json</a></li>
-    <li class="active"><a href="./plugin">Plugin</a></li>
-  </ul>
 </div>
-
     </div>
     <div class="footer">
       <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.4.6</p>
     </div>
     <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../static/one.js"></script>
-    <div class="github"><a class="github-link" href="https://github.com/spmjs/spm2">Fork me on GitHub</a></div>
+    <div id="extra">
+        <a href="https://github.com/spmjs/spm2" target="_blank">
+            <img src="https://i.alipayobjects.com/e/201211/1dbSqT9ykm.png" width="149" height="149" alt="Fork me on GitHub"></a>
+    </div>
+    <!--<div class="github"><a class="github-link" href="https://github.com/spmjs/spm2">Fork me on GitHub</a></div>-->
   </body>
 </html>

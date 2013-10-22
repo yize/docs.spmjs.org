@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="nico 0.4.6">
+    <meta name="theme" content="spm 0.1">
+    <title>新手入门</title>
+    <link rel="stylesheet" href="../static/one.css" />
+    <link rel="stylesheet" href="../static/syntax.css" />
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-38943643-2']);
+      _gaq.push(['_trackPageview']);
+      _gaq.push(['_trackPageLoadTime']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = 'https://ssl.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="navigation" role="navigation">
+        <h1 class="home"><a href="../">SpmJS</a></h1>
+        <div class="menu">
+          <a href="./">使用文档</a>
+          <a href="../cli/config">命令集</a>
+          <a href="../api/">开发者文档</a>
+        </div>
+    </div>
+    <div id="color-bar"></div>
+
+    <div class="row clearfix">
+      <div class="column-left">
+<div class="sidebar">
+  <ul>
+    <li class="sidebar-category">新手入门</li>
+    <li class="sidebar-current"><a href="./index">新手入门</a></li>
+    <li><a href="./environment">Node 环境配置</a></li>
+  </ul>
+  <ul>
+    <li class="sidebar-category">规范标准</li>
+    <li><a href="./spm-global-config">SPM 配置文件</a></li>
+    <li><a href="./package">Package.json</a></li>
+    <li><a href="./transport">Transport</a></li>
+  </ul>
+  <ul>
+    <li class="sidebar-category">构建</li>
+    <li><a href="./spm-build">标准构建</a></li>
+    <li><a href="./build-task">构建过程详解</a></li>
+  </ul>
+  <ul>
+    <li class="sidebar-category">社区</li>
+    <li><a href="./contribute">如何贡献</a></li>
+  </ul>
+</div>
+</div>
+      <div class="column-right">
+<div class="hentry typo">
+  <h1 class="entry-title">新手入门</h1>
+  <div class="entry-toc">
+    <h3>Table of Contents</h3>
+    <ul><li><a href="#安装和配置">安装和配置</a></li><li><a href="#模块">模块</a></li><li><a href="#插件">插件</a></li><li><a href="#基本命令的使用视频">基本命令的使用视频</a></li><li><a href="#贡献">贡献</a></li></ul>
+  </div>
+
+  <div class="entry-content"><p>spm 是 CMD 的包管理工具，需要和 SeaJS 配合使用。使用前请先阅读一下 <a href="http://seajs.org/">SeaJS 的官方文档</a>，确保已经了解 SeaJS 及其使用方式。</p>
+<h2 id="安装和配置">安装和配置</h2><p>安装 spm，在此之前请先<a href="./environment.html">配置 Node 环境</a></p>
+<pre>$ npm install spm -g</pre><p>spm 核心只有包管理功能，除此之外还提供了很多<a href="../cli/help.html">插件</a>。</p>
+<p>配置<a href="https://spmjs.org/">源服务</a>，在源服务上可以找到所有人分享的模块。</p>
+<pre>$ spm config source:default https://spmjs.org</pre><h2 id="模块">模块</h2><p>spm 并没有限制模块的目录结构和组织方式，但是会有推荐的方式，可以先看下<a href="https://github.com/spmjs/spm-build/tree/master/examples/simple">标准模块</a>和<a href="https://github.com/spmjs/spm-build/tree/master/examples/simple-grunt">自定义模块</a>的示例。</p>
+<p>虽然模块的组织方式不同，但上线前都需要做 <a href="./transport.html">transport</a> 处理，所以 spm 还提供了构建工具，也分为<a href="./spm-build.html">标准构建</a>和<a href="./grunt-build.html">自定义构建</a>两种。</p>
+<h2 id="插件">插件</h2><p>spm 还提供一些插件，也欢迎更多插件开发者，<a href="../api/develop-plugin.html">如何开发?</a>。</p>
+<ul>
+<li><a href="../cli/build.html">spm-build</a> 构建工具</li>
+<li><a href="../cli/init.html">spm-init</a> 初始化模块</li>
+<li><a href="../cli/status.html">spm-status</a> 检查线上 http 状态</li>
+</ul>
+<h2 id="基本命令的使用视频">基本命令的使用视频</h2><iframe src="http://ascii.io/a/2533/raw" frameborder="0" width="566" height="646"></iframe>
+
+
+
+<h2 id="贡献">贡献</h2><p>我们非常欢迎加入我们的大家庭，一起来维护 spm，<a href="./contribute.html">如何贡献?</a></p>
+</div>
+</div>
+</div>
+    </div>
+    <div class="footer">
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.4.6</p>
+    </div>
+    <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../static/one.js"></script>
+    <div id="extra">
+        <a href="https://github.com/spmjs/spm2" target="_blank">
+            <img src="https://i.alipayobjects.com/e/201211/1dbSqT9ykm.png" width="149" height="149" alt="Fork me on GitHub"></a>
+    </div>
+    <!--<div class="github"><a class="github-link" href="https://github.com/spmjs/spm2">Fork me on GitHub</a></div>-->
+  </body>
+</html>

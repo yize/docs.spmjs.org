@@ -22,18 +22,22 @@
   </head>
   <body>
     <div class="navigation" role="navigation">
-      <div class="container">
-        <a class="home" href="../">SPM</a>
+        <h1 class="home"><a href="../">SpmJS</a></h1>
         <div class="menu">
-          <a href="./">贡献文档</a>
-          <a href="../en/">Documentation</a>
-          <a href="../api/">API</a>
-          <a href="../cli/">Manual</a>
+          <a href="../doc/">使用文档</a>
+          <a href="../cli/config">命令集</a>
+          <a href="../api/">开发者文档</a>
         </div>
-      </div>
     </div>
-    <div class="mainbody">
-<div class="hentry">
+    <div id="color-bar"></div>
+
+    <div class="row clearfix">
+      <div class="column-left">
+<div class="sidebar">
+</div>
+</div>
+      <div class="column-right">
+<div class="hentry typo">
   <h1 class="entry-title">关于Grunt，从一个简单的配置开始！</h1>
   <div class="entry-toc">
     <h3>Table of Contents</h3>
@@ -156,26 +160,17 @@ grunt.loadNpmTasks(&#39;grunt-cmd-concat&#39;);</pre><p>还要告诉grunt该怎�
 };</pre><p>最后的最后，进入项目所在目录，命令行输入：</p>
 <pre>grunt build</pre><p>一切顺利的话，你就可以看到变化了！</p>
 </div>
-  <div class="entry-meta">
-    <time class="updated" datetime="2013-04-18T07:09:00.000Z">2013-04-18</time>
-  </div>
 </div>
-
-<div class="sidebar">
-  <h2 class="sidebar-title">Documentation</h2>
-  <ul>
-    <li><a href="./build-with-grunt">使用 grunt 构建</a></li>
-    <li><a href="./cmd-grunt-build">如何使用Grunt构建一个中型项目？</a></li>
-    <li class="active"><a href="./simple-grunt">关于Grunt，从一个简单的配置开始！</a></li>
-    <li><a href="./spm-chaos-build">使用 Spm2 构建业务模块的个人经验</a></li>
-  </ul>
 </div>
-
     </div>
     <div class="footer">
       <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.4.6</p>
     </div>
     <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../static/one.js"></script>
-    <div class="github"><a class="github-link" href="https://github.com/spmjs/spm2">Fork me on GitHub</a></div>
+    <div id="extra">
+        <a href="https://github.com/spmjs/spm2" target="_blank">
+            <img src="https://i.alipayobjects.com/e/201211/1dbSqT9ykm.png" width="149" height="149" alt="Fork me on GitHub"></a>
+    </div>
+    <!--<div class="github"><a class="github-link" href="https://github.com/spmjs/spm2">Fork me on GitHub</a></div>-->
   </body>
 </html>
