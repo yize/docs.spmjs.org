@@ -8,7 +8,7 @@
 
 [English Version](http://docs.spmjs.org/en/)
 
-spm 是 CMD 的包管理工具，需要和 SeaJS 配合使用。使用前请先阅读一下 [SeaJS 的官方文档](http://seajs.org/)，确保已经了解 SeaJS 及其使用方式。
+spm 是 CMD 的包管理工具，需要和 Sea.js 配合使用。使用前请先阅读一下 [Sea.js 的官方文档](http://seajs.org/)，确保已经了解 Sea.js 及其使用方式。
 
 ## 安装和配置
 
