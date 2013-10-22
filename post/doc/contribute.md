@@ -6,6 +6,13 @@
 
 ---
 
+## 使用起来
+
+[spmjs.org](https://spmjs.org) 是一个开放的 CMD 模块平台，Arale 组织和很多个人都在使用它。
+
+你可以在这里找到业界的优秀模块，可以发布自己的模块，用 `spm` 系列来管理你项目的静态文件，欢迎您加入 CMD 模块的大家庭。
+
+
 ## 提 issue
 
 如果你对 spm 有任何疑问和建议，可以通过提 issue 的方式，可以先看看[如何向开源社区提问题](https://github.com/seajs/seajs/issues/545)。
