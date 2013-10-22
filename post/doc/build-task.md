@@ -1,6 +1,8 @@
 # 构建过程详解
 
 - pubdate: 2013-08-15
+- category: 构建
+- index: 32
 
 ---
 

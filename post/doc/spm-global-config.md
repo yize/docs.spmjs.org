@@ -2,7 +2,7 @@
 
 - pubdate: 2013-09-10
 - category: 规范标准
-- index: 3
+- index: 21
 
 ----------
 
@@ -16,7 +16,7 @@
 | -- run.json
 | -- init/
 | -- themes/
-| -- cache/
+` -- cache/
 ```
 
 ## spmrc
@@ -93,7 +93,7 @@ proxy = username:password@proxy.server:port
 
 ## plugins.json
 
-存储当前安装的所有 SPM 插件.
+存储当前安装的所有 SPM 插件信息.
 
 ## init/
 

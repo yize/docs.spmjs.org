@@ -1,7 +1,7 @@
 # 如何开发一个 SPM 插件
 
 - pubdate: 2013-09-10
-- category: Tutorials
+- category: 开发教程
 - index: 41
 
 -----------

@@ -1,6 +1,8 @@
 # Node 环境配置
 
 - pubdate: 2013-09-24
+- category: 新手入门
+- index: 12
 
 ---
 

@@ -2,7 +2,7 @@
 
 - pubdate: 2013-08-15
 - category: 规范标准
-- index: 5
+- index: 23
 
 ----------
 
@@ -88,7 +88,7 @@ define('arale/base/1.0.0/base', ['arale/class/1.0.0/class','arale/events/1.0.0/e
 
 2. 模块的 id
 
-   define 的 id 需要跟 url 匹配，具体如何匹配是根据 seajs 而定的，一般 seajs 会放在根目录(`/sea.js` `/seajs/sea.js` `/seajs/seajs/2.1.1/sea.js` 都可以)，所以 base 就为 http://assets.spmjs.org 。
+   define 的 id 需要跟 url 匹配，具体如何匹配是根据 seajs 而定的，一般 seajs 会放在根目录(`/sea.js`，`/seajs/sea.js`，`/seajs/seajs/2.1.1/sea.js` 都可以)，所以 base 就为 http://assets.spmjs.org 。
 
    "请求的 url" = "seajs 的 base" + "define 的 id"，如
 

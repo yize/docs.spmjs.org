@@ -28,8 +28,7 @@
   </head>
   <body>
     <div class="navigation" role="navigation">
-      <div class="row">
-        <a class="home" href="{{content_url('index.html')}}">{{config.sitename}}</a>
+        <h1 class="home"><a href="{{content_url('index.html')}}">{{config.sitename}}</a></h1>
         {%- if config.navigation %}
         <div class="menu">
           {%- for item in config.navigation %}
@@ -37,8 +36,9 @@
           {%- endfor %}
         </div>
         {%- endif %}
-      </div>
     </div>
+    <div id="color-bar"></div>
+
     <div class="row clearfix">
       <div class="column-left">{%- block sidebar %}{% endblock %}</div>
       <div class="column-right">{%- block document %}{% endblock %}</div>
