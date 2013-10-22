@@ -4,7 +4,9 @@
 - category: 规范标准
 - index: 22
 
-----------
+---
+
+[English Version](http://docs.spmjs.org/en/package)
 
 spm 遵循 [Common Module Definition](https://github.com/spmjs/specification) 的 [packaging draft](https://github.com/spmjs/specification/blob/master/draft/package.md) 规范，每个模块必须有一个 package.json 文件来描述模块自身。
 
