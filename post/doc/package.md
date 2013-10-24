@@ -129,7 +129,7 @@ This is a way to prevent accidental publication of private repositories. But you
 ### include
 
 打包策略，可选 `all`、`relative`、`self`，分别表示`打包所有依赖`、`打包相对依赖`、`自打包自身`，
-默认为 `relative`。详细的
+默认为 `relative`。
 
 ### output
 
