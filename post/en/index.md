@@ -1,6 +1,7 @@
 # spm
 
 - pubdate: 2013-04-25
+- category: Documentation
 - index: 0
 
 spm is a static package manager, it's **not a build tools**.

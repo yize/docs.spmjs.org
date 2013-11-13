@@ -1,6 +1,7 @@
 # package.json
 
 - pubdate: 2013-03-13
+- category: Documentation
 - index: 5
 
 ----------

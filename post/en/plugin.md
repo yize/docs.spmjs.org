@@ -1,6 +1,7 @@
 # Plugin
 
 - pubdate: 2013-03-20
+- category: Documentation
 - index: 10
 
 ----------

@@ -1,6 +1,7 @@
 # Build
 
 - pubdate: 2013-02-21
+- category: Documentation
 - index: 1
 
 ----------

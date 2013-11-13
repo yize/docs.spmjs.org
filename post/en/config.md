@@ -1,6 +1,7 @@
 # Config
 
 - pubdate: 2013-02-27
+- category: Documentation
 - index: 2
 
 -----
