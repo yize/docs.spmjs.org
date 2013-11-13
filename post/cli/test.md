@@ -11,9 +11,6 @@
 ```
 npm install spm -g
 npm install apm -g
-npm install jscoverage -g
-npm install mocha-browser -g
-npm install phantomjs -g
 ```
 
 ## 使用说明

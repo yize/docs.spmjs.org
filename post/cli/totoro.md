@@ -11,7 +11,6 @@
 ```
 npm install spm -g
 npm install apm -g
-npm install totoro -g
 ```
 
 ## 使用说明
