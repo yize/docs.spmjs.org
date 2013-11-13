@@ -10,6 +10,7 @@ html{color:#444333;background:#fff;-webkit-text-size-adjust:100%;-ms-text-size-a
 
 body {
   font-size: 16px;
+  font-family: "Marmelad", "Lucida Grande", Georgia, sans-serif;
 }
 
 a {
@@ -75,7 +76,7 @@ a:hover {
 
 #color-bar {
     height: 4px;
-    background: #26c1c6 url(//spmjs.org/_static/img/bg.png) no-repeat center center;
+    background: #3B6292 url(//spmjs.org/_static/img/bg.jpg) no-repeat center bottom;
     background-size: cover;
 }
 /* sidebar */
@@ -90,7 +91,7 @@ a:hover {
 }
 .sidebar-category {
   position: relative;
-    background: #26c1c6 url(//spmjs.org/_static/img/bg.png) no-repeat 0 0;
+  background: #3B6292;
   color: #fff;
   font-size: 16px;
 }
