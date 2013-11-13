@@ -41,19 +41,25 @@ Suggestions for Windows:
 
 Install spm is simple with npm:
 
-    $ npm install spm -g
+```bash
+$ npm install spm -g
+```
 
 Please install it with `-g` option, otherwise you can't use it in command line.
 
 If you want to try the latest version of spm, try the ninja channel:
 
-    $ npm install spm@ninja -g
+```bash
+$ npm install spm@ninja -g
+```
 
 You can also grab the code from [github](https://github.com/spmjs/spm2) and install from the source code.
 
 Try with `spm` now:
 
-    $ spm
+```bash
+$ spm
+```
 
 If you haven't set `NODE_PATH`, it will prompt an information like:
 
@@ -68,19 +74,27 @@ Please set environment variable NODE_PATH in ~/.zshrc:
 
 spm comes with some built-in commands, and it can be extended by plugins. Show the help screen with:
 
-    $ spm -h
+```bash
+$ spm -h
+```
 
 or:
 
-    $ spm help
+```bash
+$ spm help
+```
 
 You can get more help information of a sub-command by:
 
-    $ spm install -h
+```bash
+$ spm install -h
+```
 
 or:
 
-    $ spm help install
+```bash
+$ spm help install
+```
 
 Want to write your own plugin? Checkout the [plugin](./plugin.md) section.
 
@@ -91,15 +105,17 @@ When you installed spm, you get everything to communicate with https://spmjs.org
 
 If you want to publish your package to https://spmjs.org , your package should contain:
 
-    package.json
-    dist/
+```
+package.json
+dist/
+```
 
 1. A package.json that contains every information we need
 2. a dist directory that contains compiled module files
 
 If you are writing a standard module, you can get `spm-build`:
 
-```
+```bash
 $ npm install spm-build -g
 ```
 
@@ -139,8 +155,10 @@ The `package.json` (more information on [package](./package.md) section) is as s
 
 Install the requirements and build the package:
 
-    $ spm install
-    $ spm build
+```bash
+$ spm install
+$ spm build
+```
 
 After `spm build`, it should be:
 
@@ -180,17 +198,21 @@ There is also an [online manual](../cli/install.md) and the [desgin pattern](./i
 
 You can register an account at [spmjs.org](https://spmjs.org). You can also register your account with `spm`:
 
-    $ spm login
+```
+$ spm login
 
-    do you have an account? (Y/n)
+do you have an account? (Y/n)
+```
 
 And answer no. It will prompt:
 
-    do you have an account? (Y/n) n
+```
+do you have an account? (Y/n) n
 
-    username:
-    email:
-    password:
+username:
+email:
+password:
+```
 
 If you answer yes, you can login now.
 
@@ -203,27 +225,36 @@ Register an account at [spmjs.org](https://spmjs.org). Replace `family` in `pack
 
 And now you can publish your package with:
 
-    $ spm publish
+```bash
+$ spm publish
+```
 
 Get more help on publish:
 
-    $ spm help publish
+```bash
+$ spm help publish
+```
 
 - You can also read our online manual [spm publish](../cli/publish.md).
 - Find more information on [package](./package.md).
 
 If you accidentally published a broken version, you can force to publish the version again:
 
-    $ spm publish -f
+```bash
+$ spm publish -f
+```
 
 You can also unpublish it:
 
-    $ spm unpublish family/name@version
+```bash
+$ spm unpublish family/name@version
+```
 
 You can even delete the whole project (**you can never recovery it again**):
 
-    $ spm unpublish family/name
-
+```bash
+$ spm unpublish family/name
+```
 
 ## Info & Search
 
