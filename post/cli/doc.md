@@ -10,7 +10,7 @@
 
 ```
 npm install spm -g
-npm install apm -g
+npm install spm-doc -g
 ```
 
 ## 使用说明
@@ -19,7 +19,7 @@ npm install apm -g
 
 spm doc 为文档管理工具，用于生成，开发，发布文档，是对 [nico](https://github.com/lepture/nico) 的一个封装。
 
-先确认是否已经下载了文档模板 `~/.spm/themes/arale` 和 `~/.spm/themes/alice`。
+先确认是否已经下载了[默认的 CMD 模块的文档模板](https://github.com/spmjs/nico-cmd)到 `~/.spm/themes/cmd` 。
 
 `spm doc build` 生成文档到 _site 目录下。
 
@@ -44,4 +44,3 @@ spm doc 为文档管理工具，用于生成，开发，发布文档，是对 [n
 ### -p, --port
 
 启动 server 的时候指定端口，默认为 8000。
-    
