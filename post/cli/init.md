@@ -6,6 +6,10 @@
 
 -----------
 
+## 仓库
+
+[spmjs/spm-init](https://github.com/spmjs/spm-init)
+
 ## 安装
 
 ```

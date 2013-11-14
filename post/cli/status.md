@@ -6,6 +6,10 @@
 
 -----------
 
+## 仓库
+
+[spmjs/spm-status](https://github.com/spmjs/spm-status)
+
 ## 安装
 
 ```
