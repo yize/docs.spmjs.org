@@ -98,3 +98,4 @@ define('arale/base/1.0.0/base', ['arale/class/1.0.0/class','arale/events/1.0.0/e
 
     通过 spm 管理模块包，也需要定义 family，name 和 version。如 https://spmjs.org/arale/base/
 
+更多内容可查看[ID 和路径匹配原则](https://github.com/seajs/seajs/issues/930)。
