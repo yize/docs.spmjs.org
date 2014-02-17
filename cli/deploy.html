@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="generator" content="nico 0.4.7">
     <meta name="theme" content="spm 0.1">
-    <title>spm-build - spm document</title>
+    <title>spm-deploy - spm document</title>
     <link rel="stylesheet" href="../static/one.css" />
     <link rel="stylesheet" href="../static/syntax.css" />
     <script type="text/javascript">
@@ -47,13 +47,13 @@
   </ul>
   <ul>
     <li class="sidebar-category">通用插件</li>
-    <li class="sidebar-current"><a href="./build">spm-build</a></li>
+    <li><a href="./build">spm-build</a></li>
     <li><a href="./init">spm-init</a></li>
     <li><a href="./status">spm-status</a></li>
   </ul>
   <ul>
     <li class="sidebar-category">支付宝插件</li>
-    <li><a href="./deploy">spm-deploy</a></li>
+    <li class="sidebar-current"><a href="./deploy">spm-deploy</a></li>
     <li><a href="./doc">spm-doc</a></li>
     <li><a href="./zip">spm-zip</a></li>
     <li><a href="./doctor">spm-doctor</a></li>
@@ -65,14 +65,42 @@
 </div>
       <div class="column-right">
 <div class="hentry typo">
-  <h1 class="entry-title">spm-build</h1>
+  <h1 class="entry-title">spm-deploy</h1>
   <div class="entry-toc">
     <h3>Table of Contents</h3>
-    <ul><li><a href="#synopsis">SYNOPSIS</a></li><li><a href="#description">DESCRIPTION</a></li><li><a href="#options">OPTIONS</a></li></ul>
+    <ul><li><a href="#仓库">仓库</a></li><li><a href="#安装">安装</a></li><li><a href="#使用说明">使用说明</a></li><li><a href="#选项">选项</a><ul><li><a href="#-target">--target</a></li><li><a href="#-host">--host</a></li><li><a href="#-username">--username</a></li><li><a href="#-password">--password</a></li></ul></ul>
   </div>
 
-  <div class="entry-content"><h2 id="synopsis">SYNOPSIS</h2><pre>spm build [...]
-</pre><h2 id="description">DESCRIPTION</h2><h2 id="options">OPTIONS</h2></div>
+  <div class="entry-content"><h2 id="仓库">仓库</h2>
+<p><a href="https://github.com/spmjs/spm-deploy">spmjs/spm-deploy</a></p>
+<h2 id="安装">安装</h2><pre>npm install spm -g
+npm install spm-deploy -g
+</pre><h2 id="使用说明">使用说明</h2>
+<blockquote>
+<p>此工具只支持支付宝内部使用，外部需要自己写 Gruntfile 。</p>
+</blockquote>
+
+<p>通过 scp 把模块上传到服务器上，服务器要支持 ssh，默认用户名密码为 admin/alipaydev。</p>
+
+<p>默认上传到 assets.dev.alipay.net</p>
+<pre>$ cd widget
+$ spm deploy
+</pre>
+<p>上传后可访问 <a href="http://assets.dev.alipay.net/arale/widget/1.0.0/widget.js">http://assets.dev.alipay.net/arale/widget/1.0.0/widget.js</a></p>
+
+<p>还可以直接上传源上已有的文件</p>
+<pre>$ spm deploy arale&#47;widget
+</pre><h2 id="选项">选项</h2><h3 id="-target">--target</h3>
+<p>可指定坑位，如 p11，也就是上传到 assets.p11.alipay.net</p>
+<pre>$ spm deploy --target p11
+</pre><h3 id="-host">--host</h3>
+<p>可指定域名</p>
+<pre>$ spm deploy --host assets.a1.alipay.net
+</pre><h3 id="-username">--username</h3>
+<p>可指定用户名</p>
+<h3 id="-password">--password</h3>
+<p>可指定密码</p>
+</div>
 </div>
 </div>
     </div>

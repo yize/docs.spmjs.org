@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="generator" content="nico 0.4.6">
+    <meta name="generator" content="nico 0.4.7">
     <meta name="theme" content="spm 0.1">
-    <title>spm</title>
+    <title>总述 - spm document</title>
     <link rel="stylesheet" href="../static/one.css" />
     <link rel="stylesheet" href="../static/syntax.css" />
     <script type="text/javascript">
@@ -22,77 +22,77 @@
   </head>
   <body>
     <div class="navigation" role="navigation">
-      <div class="container">
-        <a class="home" href="../">SPM</a>
+        <h1 class="home"><a href="../">spmjs</a></h1>
         <div class="menu">
-          <a href="../contrib/">贡献文档</a>
-          <a href="../en/">Documentation</a>
-          <a href="./">API</a>
-          <a href="../cli/">Manual</a>
+          <a href="../doc/">使用文档</a>
+          <a href="../cli/config">命令集</a>
+          <a href="./">开发者文档</a>
         </div>
-      </div>
     </div>
-    <div class="mainbody">
-<div class="hentry">
-  <h1 class="entry-title">spm</h1>
-  <div class="entry-toc">
-    <h3>Table of Contents</h3>
-    <ul><li><a href="#spm-version">spm.version</a></li><li><a href="#spm-log-category-message">spm.log(category, message)</a></li><li><a href="#spm-plugin">spm.plugin</a><ul><li><a href="#spm-plugin-install-options">spm.plugin.install(options)</a></li><li><a href="#spm-plugin-uninstall-name">spm.plugin.uninstall(name)</a></li><li><a href="#spm-plugin-plugins">spm.plugin.plugins</a></li></ul></li><li><a href="#spm-config">spm.config</a><ul><li><a href="#spm-config-get-key">spm.config.get(key)</a></li><li><a href="#spm-config-set-key-value">spm.config.set(key, value)</a></li><li><a href="#spm-config-remove-section">spm.config.remove(section)</a></li></ul></li><li><a href="#spm-build-options">spm.build(options)</a><ul><li><a href="#spm-build-loadbuildtasks-options-pkg">spm.build.loadBuildTasks(options, pkg)</a></li></ul></li><li><a href="#spm-login-options">spm.login(options)</a></li><li><a href="#spm-install-options">spm.install(options)</a></li><li><a href="#spm-info-options">spm.info(options)</a></li><li><a href="#spm-search-options">spm.search(options)</a></li><li><a href="#spm-publish-options">spm.publish(options)</a></li><li><a href="#spm-unpublish-options">spm.unpublish(options)</a></li><li><a href="#spm-sdk">spm.sdk</a></li></ul>
-  </div>
+    <div id="color-bar"></div>
 
-  <div class="entry-content"><p>Get the interface of spm:</p>
-<div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> spm = require(<span class="string">'spm'</span>)</code></pre></div><h2 id="spm-version">spm.version</h2><p>The version of spm.</p>
-<h2 id="spm-log-category-message">spm.log(category, message)</h2><p>Always use <code>spm.log</code> in your program, never use <code>console</code>.</p>
-<div class="highlight"><pre><code class="javascript">spm.log(<span class="string">'install'</span>, <span class="string">'arale/class'</span>)</code></pre></div><h2 id="spm-plugin">spm.plugin</h2><p>API for plugins.</p>
-<h3 id="spm-plugin-install-options">spm.plugin.install(options)</h3><p>Install a plugin, used by postinstall hook in npm:</p>
-<div class="highlight"><pre><code class="javascript">spm.plugin.install({
-  name: <span class="string">'init'</span>,
-  bin: <span class="string">'spm-init'</span>,
-  description: <span class="string">'init …'</span>
-})</code></pre></div><h3 id="spm-plugin-uninstall-name">spm.plugin.uninstall(name)</h3><p>Uninstall a plugin, used by uninstall hook in npm:</p>
-<div class="highlight"><pre><code class="javascript">spm.plugin.uninstall(<span class="string">'init'</span>)</code></pre></div><h3 id="spm-plugin-plugins">spm.plugin.plugins</h3><p>All installed plugins:</p>
-<pre>var plugins = spm.plugin.plugins;</pre><h2 id="spm-config">spm.config</h2><p>Interact with <code>~/.spm/spmrc</code> config file.</p>
-<h3 id="spm-config-get-key">spm.config.get(key)</h3><p>Get information in spmrc:</p>
-<pre>spm.config.get(&#39;user&#39;)
-spm.config.get(&#39;user.username&#39;)</pre><h3 id="spm-config-set-key-value">spm.config.set(key, value)</h3><p>Set section in spmrc:</p>
-<pre>spm.config.set(&#39;user.username&#39;, &#39;lepture&#39;)</pre><h3 id="spm-config-remove-section">spm.config.remove(section)</h3><p>Remove a section in spmrc:</p>
-<pre>spm.config.remove(&#39;user&#39;)</pre><h2 id="spm-build-options">spm.build(options)</h2><p>Build the module.</p>
-<h3 id="spm-build-loadbuildtasks-options-pkg">spm.build.loadBuildTasks(options, pkg)</h3><p>Load build tasks: <code>spm-build</code>.</p>
-<p>This is a task collection which is <a href="https://github.com/spmjs/grunt-spm-build">grunt-spm-build</a>. You can bind and load this task too.</p>
-<h2 id="spm-login-options">spm.login(options)</h2><p>Login/register spmjs.org.</p>
-<h2 id="spm-install-options">spm.install(options)</h2><p>Install packages from spmjs.org.</p>
-<h2 id="spm-info-options">spm.info(options)</h2><p>Get information of a module from spmjs.org.</p>
-<h2 id="spm-search-options">spm.search(options)</h2><p>Search modules from spmjs.org.</p>
-<pre>spm.search({query: &#39;jquery&#39;})</pre><h2 id="spm-publish-options">spm.publish(options)</h2><p>Publish a package to spmjs.org.</p>
-<h2 id="spm-unpublish-options">spm.unpublish(options)</h2><p>Unpublish a package from spmjs.org.</p>
-<pre>spm.unpublish({query: &#39;arale/class@1.0.0&#39;})</pre><h2 id="spm-sdk">spm.sdk</h2><p>Low level API:</p>
-<ul>
-<li><a href="https://github.com/spmjs/cmd-util/blob/master/docs/ast.md"><code>spm.sdk.ast</code></a></li>
-<li><a href="https://github.com/spmjs/cmd-util/blob/master/docs/iduri.md"><code>spm.sdk.iduri</code></a></li>
-<li><a href="https://github.com/spmjs/spmrc"><code>spm.sdk.spmrc</code></a></li>
-<li><a href="./yuan"><code>spm.sdk.yuan</code></a></li>
-<li><a href="./grunt"><code>spm.sdk.grunt</code></a></li>
-</ul>
-</div>
-  <div class="entry-meta">
-    <time class="updated" datetime="2013-03-26T00:00:00.000Z">2013-03-26</time>
-  </div>
-</div>
-
+    <div class="row clearfix">
+      <div class="column-left">
 <div class="sidebar">
-  <h2 class="sidebar-title">Documentation</h2>
   <ul>
-    <li class="active"><a href="./index">spm</a></li>
+    <li class="sidebar-category">高层 API</li>
+    <li class="sidebar-current"><a href="./index">总述</a></li>
+    <li><a href="./config">spm.config</a></li>
+    <li><a href="./log">spm.log</a></li>
+    <li><a href="./install">spm.install</a></li>
+    <li><a href="./plugin">spm.plugin</a></li>
+    <li><a href="./publish">spm.publish</a></li>
+  </ul>
+  <ul>
+    <li class="sidebar-category">低层 API</li>
+    <li><a href="./sdk">总述</a></li>
     <li><a href="./yuan">yuan</a></li>
     <li><a href="./grunt">grunt</a></li>
   </ul>
+  <ul>
+    <li class="sidebar-category">开发教程</li>
+    <li><a href="./develop-plugin">如何开发一个 SPM 插件</a></li>
+  </ul>
 </div>
+</div>
+      <div class="column-right">
+<div class="hentry typo">
+  <h1 class="entry-title">总述</h1>
+  <div class="entry-toc">
+    <h3>Table of Contents</h3>
+    <ul><li><a href="#关系">关系</a></li><li><a href="#如何引入">如何引入</a></li><li><a href="#查看当前版本">查看当前版本</a></li></ul>
+  </div>
 
+  <div class="entry-content"><p>SPM 的 API 说明.</p>
+
+<hr/>
+<h2 id="关系">关系</h2>
+<p>SPM 系统中, 一共有三大部分:</p>
+
+<ul>
+<li><a href="https://github.com/spmjs/spm2">spm</a>: 提供了发布, 查找等基本的功能. 其他功能则通过插件形式提供, 如 spm-build, spm-init.</li>
+<li><a href="https://github.com/spmjs/spm-grunt">grunt</a>: SPM 对 grunt 稍加修改, 名为 <a href="https://github.com/spmjs/spm-grunt">spm-grunt</a>, 你基本上可以把它当成 grunt 一样使用.</li>
+<li><a href="/api/yuan">yuan</a>: 封装了对远程源服务器操作的 js 接口.</li>
+</ul>
+<h2 id="如何引入">如何引入</h2>
+<p>SPM 是一个标准 nodejs 模块, 所以在安装好 SPM 之后, 只需要通过 <code>require</code> 就可引入 SPM 这个模块.</p>
+<div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> spm = require(<span class="string">'spm'</span>)
+</code></pre></div><h2 id="查看当前版本">查看当前版本</h2>
+<p><code>spm.version</code> 中包含 SPM 的版本信息.</p>
+<pre>&gt; spm.version
+&#39;2.1.11&#39;
+</pre></div>
+</div>
+</div>
     </div>
     <div class="footer">
-      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.4.6</p>
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.4.7</p>
     </div>
     <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../static/one.js"></script>
-    <div class="github"><a class="github-link" href="https://github.com/spmjs/spm2">Fork me on GitHub</a></div>
+    <div id="extra">
+        <a href="https://github.com/spmjs/spm2" target="_blank">
+            <img src="https://i.alipayobjects.com/e/201211/1dbSqT9ykm.png" width="149" height="149" alt="Fork me on GitHub"></a>
+    </div>
+    <!--<div class="github"><a class="github-link" href="https://github.com/spmjs/spm2">Fork me on GitHub</a></div>-->
   </body>
 </html>

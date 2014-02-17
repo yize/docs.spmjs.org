@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="generator" content="nico 0.4.7">
     <meta name="theme" content="spm 0.1">
-    <title>spm-build - spm document</title>
+    <title>spm-doctor - spm document</title>
     <link rel="stylesheet" href="../static/one.css" />
     <link rel="stylesheet" href="../static/syntax.css" />
     <script type="text/javascript">
@@ -47,7 +47,7 @@
   </ul>
   <ul>
     <li class="sidebar-category">通用插件</li>
-    <li class="sidebar-current"><a href="./build">spm-build</a></li>
+    <li><a href="./build">spm-build</a></li>
     <li><a href="./init">spm-init</a></li>
     <li><a href="./status">spm-status</a></li>
   </ul>
@@ -56,7 +56,7 @@
     <li><a href="./deploy">spm-deploy</a></li>
     <li><a href="./doc">spm-doc</a></li>
     <li><a href="./zip">spm-zip</a></li>
-    <li><a href="./doctor">spm-doctor</a></li>
+    <li class="sidebar-current"><a href="./doctor">spm-doctor</a></li>
     <li><a href="./test">spm-test</a></li>
     <li><a href="./totoro">spm-totoro</a></li>
     <li><a href="./watch">spm-watch</a></li>
@@ -65,14 +65,29 @@
 </div>
       <div class="column-right">
 <div class="hentry typo">
-  <h1 class="entry-title">spm-build</h1>
+  <h1 class="entry-title">spm-doctor</h1>
   <div class="entry-toc">
     <h3>Table of Contents</h3>
-    <ul><li><a href="#synopsis">SYNOPSIS</a></li><li><a href="#description">DESCRIPTION</a></li><li><a href="#options">OPTIONS</a></li></ul>
+    <ul><li><a href="#安装">安装</a></li><li><a href="#使用说明">使用说明</a></li></ul>
   </div>
 
-  <div class="entry-content"><h2 id="synopsis">SYNOPSIS</h2><pre>spm build [...]
-</pre><h2 id="description">DESCRIPTION</h2><h2 id="options">OPTIONS</h2></div>
+  <div class="entry-content"><h2 id="安装">安装</h2><pre>npm install spm -g
+npm install apm -g
+</pre><h2 id="使用说明">使用说明</h2>
+<blockquote>
+<p>此工具只支持支付宝内部使用</p>
+</blockquote>
+
+<p>spm doctor 检查 spm 配置环境和相关插件的版本是否正确。</p>
+
+<p>可以通过这个命令检查当前环境，排错时首推功能。</p>
+
+<ul>
+<li>检测 node 环境，如遇到错误可根据文档进行配置。</li>
+<li>检测依赖库的版本是否过期，如遇到错误可重新安装。</li>
+<li>检测 spmrc 的配置是否正确，如遇到错误可修改 <a href="../doc/spm-global-config#spmrc">~/.spm/spmrc</a> 文件对应的配置。</li>
+</ul>
+</div>
 </div>
 </div>
     </div>

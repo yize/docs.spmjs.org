@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="generator" content="nico 0.4.7">
     <meta name="theme" content="spm 0.1">
-    <title>spm-build - spm document</title>
+    <title>spm-plugin - spm document</title>
     <link rel="stylesheet" href="../static/one.css" />
     <link rel="stylesheet" href="../static/syntax.css" />
     <script type="text/javascript">
@@ -43,11 +43,11 @@
     <li><a href="./unpublish">spm-unpublish</a></li>
     <li><a href="./info">spm-info</a></li>
     <li><a href="./help">spm-help</a></li>
-    <li><a href="./plugin">spm-plugin</a></li>
+    <li class="sidebar-current"><a href="./plugin">spm-plugin</a></li>
   </ul>
   <ul>
     <li class="sidebar-category">通用插件</li>
-    <li class="sidebar-current"><a href="./build">spm-build</a></li>
+    <li><a href="./build">spm-build</a></li>
     <li><a href="./init">spm-init</a></li>
     <li><a href="./status">spm-status</a></li>
   </ul>
@@ -65,14 +65,23 @@
 </div>
       <div class="column-right">
 <div class="hentry typo">
-  <h1 class="entry-title">spm-build</h1>
+  <h1 class="entry-title">spm-plugin</h1>
   <div class="entry-toc">
     <h3>Table of Contents</h3>
-    <ul><li><a href="#synopsis">SYNOPSIS</a></li><li><a href="#description">DESCRIPTION</a></li><li><a href="#options">OPTIONS</a></li></ul>
+    <ul><li><a href="#安装">安装</a></li><li><a href="#使用说明">使用说明</a><ul><li><a href="#安装-plugin">安装 plugin</a></li><li><a href="#卸载-plugin">卸载 plugin</a></li><li><a href="#显示所有-plugin">显示所有 plugin</a></li></ul></ul>
   </div>
 
-  <div class="entry-content"><h2 id="synopsis">SYNOPSIS</h2><pre>spm build [...]
-</pre><h2 id="description">DESCRIPTION</h2><h2 id="options">OPTIONS</h2></div>
+  <div class="entry-content"><h2 id="安装">安装</h2><pre>npm install spm -g
+</pre><h2 id="使用说明">使用说明</h2>
+<p><code>spm plugin</code> 可安装和卸载 plugin，plugin 需要符合 <a href="/api/develop-plugin">插件的开发规范</a> 才能正确安装。</p>
+<h3 id="安装-plugin">安装 plugin</h3><pre>spm plugin install init
+</pre>
+<p>执行后会用 npm 安装 spm-init，然后将命令挂在到 spm 上。可使用 <code>spm init</code> 或 <code>spm-init</code> 执行命令。</p>
+<h3 id="卸载-plugin">卸载 plugin</h3><pre>spm plugin uninstall init
+</pre>
+<p>卸载 plugin 后无法使用 <code>spm init</code>，也不显示在 plugin 列表中，但还是可以使用 <code>spm-init</code>。</p>
+<h3 id="显示所有-plugin">显示所有 plugin</h3><pre>spm plugin list
+</pre></div>
 </div>
 </div>
     </div>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="generator" content="nico 0.4.7">
     <meta name="theme" content="spm 0.1">
-    <title>spm-build - spm document</title>
+    <title>spm-info - spm document</title>
     <link rel="stylesheet" href="../static/one.css" />
     <link rel="stylesheet" href="../static/syntax.css" />
     <script type="text/javascript">
@@ -41,13 +41,13 @@
     <li><a href="./install">spm-install</a></li>
     <li><a href="./publish">spm-publish</a></li>
     <li><a href="./unpublish">spm-unpublish</a></li>
-    <li><a href="./info">spm-info</a></li>
+    <li class="sidebar-current"><a href="./info">spm-info</a></li>
     <li><a href="./help">spm-help</a></li>
     <li><a href="./plugin">spm-plugin</a></li>
   </ul>
   <ul>
     <li class="sidebar-category">通用插件</li>
-    <li class="sidebar-current"><a href="./build">spm-build</a></li>
+    <li><a href="./build">spm-build</a></li>
     <li><a href="./init">spm-init</a></li>
     <li><a href="./status">spm-status</a></li>
   </ul>
@@ -65,14 +65,22 @@
 </div>
       <div class="column-right">
 <div class="hentry typo">
-  <h1 class="entry-title">spm-build</h1>
+  <h1 class="entry-title">spm-info</h1>
   <div class="entry-toc">
     <h3>Table of Contents</h3>
-    <ul><li><a href="#synopsis">SYNOPSIS</a></li><li><a href="#description">DESCRIPTION</a></li><li><a href="#options">OPTIONS</a></li></ul>
+    <ul><li><a href="#安装">安装</a></li><li><a href="#使用说明">使用说明</a></li><li><a href="#选项">选项</a><ul><li><a href="#-s-source">-s, --source</a></li></ul></ul>
   </div>
 
-  <div class="entry-content"><h2 id="synopsis">SYNOPSIS</h2><pre>spm build [...]
-</pre><h2 id="description">DESCRIPTION</h2><h2 id="options">OPTIONS</h2></div>
+  <div class="entry-content"><h2 id="安装">安装</h2><pre>npm install spm -g
+</pre><h2 id="使用说明">使用说明</h2>
+<p>info 可查看指定模块的信息。</p>
+<pre>$ spm info arale&#47;dialog
+</pre>
+<p>可查看整个 family 下的模块信息</p>
+<pre>$ spm info arale &#47;&#47; 查看
+</pre><h2 id="选项">选项</h2><h3 id="-s-source">-s, --source</h3>
+<p>指定源，详情看 <a href="../doc/spm-global-config#source">配置文档</a>。</p>
+</div>
 </div>
 </div>
     </div>
