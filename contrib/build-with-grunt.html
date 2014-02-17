@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="generator" content="nico 0.4.7">
+    <meta name="generator" content="nico 0.5.0">
     <meta name="theme" content="spm 0.1">
     <title>使用 grunt 构建 - spm document</title>
     <link rel="stylesheet" href="../static/one.css" />
@@ -49,13 +49,13 @@
 <h3 id="transport">transport</h3>
 <p>Transport 是将信息不完备的模块转换为信息完备的模块的过程，比如：</p>
 <div class="highlight"><pre><code class="javascript"><span class="comment">// foo.js</span>
-define(<span class="keyword">function</span>(require, exports, module) {
+define(<span class="function"><span class="keyword">function</span><span class="params">(require, exports, module)</span> {</span>
   require(<span class="string">'./bar'</span>)
 })
 </code></pre></div>
 <p>经过 transport 后，变为：</p>
 <div class="highlight"><pre><code class="javascript"><span class="comment">// foo.js</span>
-define(<span class="string">'foo'</span>, [<span class="string">'./bar'</span>], <span class="keyword">function</span>(require, exports, module) {
+define(<span class="string">'foo'</span>, [<span class="string">'./bar'</span>], <span class="function"><span class="keyword">function</span><span class="params">(require, exports, module)</span> {</span>
   require(<span class="string">'./bar'</span>)
 })
 </code></pre></div>
@@ -75,7 +75,7 @@ define(<span class="string">'foo'</span>, [<span class="string">'./bar'</span>],
 </div>
     </div>
     <div class="footer">
-      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.4.7</p>
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.5.0</p>
     </div>
     <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../static/one.js"></script>
     <div id="extra">

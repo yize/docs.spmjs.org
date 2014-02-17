@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="generator" content="nico 0.4.7">
+    <meta name="generator" content="nico 0.5.0">
     <meta name="theme" content="spm 0.1">
     <title>spm - spm document</title>
     <link rel="stylesheet" href="../static/one.css" />
@@ -107,13 +107,13 @@ I believe you have done this part, but I&#39;d like to repeat myself.</p>
 <div class="highlight"><pre><code class="bash">$ spm -h
 </code></pre></div>
 <p>or:</p>
-<div class="highlight"><pre><code class="bash">$ spm help
+<div class="highlight"><pre><code class="bash">$ spm <span class="built_in">help</span>
 </code></pre></div>
 <p>You can get more help information of a sub-command by:</p>
 <div class="highlight"><pre><code class="bash">$ spm install -h
 </code></pre></div>
 <p>or:</p>
-<div class="highlight"><pre><code class="bash">$ spm help install
+<div class="highlight"><pre><code class="bash">$ spm <span class="built_in">help</span> install
 </code></pre></div>
 <p>Want to write your own plugin? Checkout the <a href="./plugin">plugin</a> section.</p>
 <h2 id="build">Build</h2>
@@ -138,7 +138,7 @@ src&#47;
     hello.js
 </pre>
 <p>The source code of <code>hello.js</code> is as simple as:</p>
-<div class="highlight"><pre><code class="javascript">define(<span class="keyword">function</span>(require, exports, module) {
+<div class="highlight"><pre><code class="javascript">define(<span class="function"><span class="keyword">function</span><span class="params">(require, exports, module)</span> {</span>
     exports.name = <span class="string">'hello'</span>
     exports.jquery = require(<span class="string">'jquery'</span>)
 })
@@ -162,7 +162,7 @@ src&#47;
 $ spm build
 </code></pre></div>
 <p>After <code>spm build</code>, it should be:</p>
-<div class="highlight"><pre><code class="javascript">define(<span class="string">'lepture/hello/1.0.0/hello'</span>, [<span class="string">'jquery/jquery/1.7.2/jquery'</span>], <span class="keyword">function</span>(require) {
+<div class="highlight"><pre><code class="javascript">define(<span class="string">'lepture/hello/1.0.0/hello'</span>, [<span class="string">'jquery/jquery/1.7.2/jquery'</span>], <span class="function"><span class="keyword">function</span><span class="params">(require)</span> {</span>
     exports.name = <span class="string">'hello'</span>
     exports.jquery = require(<span class="string">'jquery/jquery/1.7.2/jquery'</span>)
 })
@@ -204,7 +204,7 @@ password:
 <div class="highlight"><pre><code class="bash">$ spm publish
 </code></pre></div>
 <p>Get more help on publish:</p>
-<div class="highlight"><pre><code class="bash">$ spm help publish
+<div class="highlight"><pre><code class="bash">$ spm <span class="built_in">help</span> publish
 </code></pre></div>
 <ul>
 <li>You can also read our online manual <a href="../cli/publish">spm publish</a>.</li>
@@ -212,7 +212,7 @@ password:
 </ul>
 
 <p>If you accidentally published a broken version, you can force to publish the version again:</p>
-<div class="highlight"><pre><code class="bash">$ spm publish -f
+<div class="highlight"><pre><code class="bash">$ spm publish <span class="operator">-f</span>
 </code></pre></div>
 <p>You can also unpublish it:</p>
 <div class="highlight"><pre><code class="bash">$ spm unpublish family/name@version
@@ -237,7 +237,7 @@ $ spm help search
 </div>
     </div>
     <div class="footer">
-      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.4.7</p>
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.5.0</p>
     </div>
     <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../static/one.js"></script>
     <div id="extra">

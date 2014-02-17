@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="generator" content="nico 0.4.7">
+    <meta name="generator" content="nico 0.5.0">
     <meta name="theme" content="spm 0.1">
     <title>spm - spm document</title>
     <link rel="stylesheet" href="../static/one.css" />
@@ -86,7 +86,7 @@ src&#47;
     hello.js
 </pre>
 <p>其中 <code>hello.js</code> 的源码假设为：</p>
-<div class="highlight"><pre><code class="javascript">define(<span class="keyword">function</span>(require, exports, module) {
+<div class="highlight"><pre><code class="javascript">define(<span class="function"><span class="keyword">function</span><span class="params">(require, exports, module)</span> {</span>
     exports.name = <span class="string">'hello'</span>
     exports.Class = require(<span class="string">'class'</span>)
 })
@@ -110,7 +110,7 @@ src&#47;
 $ spm build
 </pre>
 <p>经过 build 后，我们的 <code>hello.js</code> 将会包含 id 和依赖关系：</p>
-<div class="highlight"><pre><code class="javascript">define(<span class="string">'lepture/hello/1.0.0/hello'</span>, [<span class="string">'arale/class/1.0.0/class'</span>], <span class="keyword">function</span>(require, exports, module) {
+<div class="highlight"><pre><code class="javascript">define(<span class="string">'lepture/hello/1.0.0/hello'</span>, [<span class="string">'arale/class/1.0.0/class'</span>], <span class="function"><span class="keyword">function</span><span class="params">(require, exports, module)</span> {</span>
     exports.name = <span class="string">'hello'</span>
     exports.Class = require(<span class="string">'arale/class/1.0.0/class'</span>)
 })
@@ -170,7 +170,7 @@ $ spm help search
 </div>
     </div>
     <div class="footer">
-      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.4.7</p>
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.5.0</p>
     </div>
     <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../static/one.js"></script>
     <div id="extra">

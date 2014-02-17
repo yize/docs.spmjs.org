@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="generator" content="nico 0.4.7">
+    <meta name="generator" content="nico 0.5.0">
     <meta name="theme" content="spm 0.1">
     <title>Transport - spm document</title>
     <link rel="stylesheet" href="../static/one.css" />
@@ -66,7 +66,7 @@
 
   <div class="entry-content"><h2 id="transport-是什么？">transport 是什么？</h2>
 <p>根据 <a href="https://github.com/seajs/seajs/issues/242">CMD 的模块定义规范</a> 可以定义如下模块</p>
-<div class="highlight"><pre><code class="javascript">define(<span class="keyword">function</span>(require, exports, module) {
+<div class="highlight"><pre><code class="javascript">define(<span class="function"><span class="keyword">function</span><span class="params">(require, exports, module)</span> {</span>
   <span class="keyword">var</span> Base = require(<span class="string">'base'</span>);
   <span class="keyword">var</span> Widget = Base.extend({
     ...
@@ -81,16 +81,16 @@
 
 <p>这个问题在 combo 中尤为明显，多个 js 文件被动态合并成一个文件下载下来。</p>
 <div class="highlight"><pre><code class="javascript"><span class="comment">// a.js</span>
-define(<span class="keyword">function</span>(){});
+define(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>});
 <span class="comment">// b.js</span>
-define(<span class="keyword">function</span>(){});
+define(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>});
 <span class="comment">// c.js</span>
-define(<span class="keyword">function</span>(){});
+define(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>});
 
 <span class="comment">// a.js,b.js,c.js</span>
-define(<span class="keyword">function</span>(){});
-define(<span class="keyword">function</span>(){});
-define(<span class="keyword">function</span>(){});
+define(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>});
+define(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>});
+define(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>});
 </code></pre></div>
 <p>因为模块是跟 url 一一对应的，所以合并后无法匹配相应的模块了。这个问题可以用添加 id 的方式解决。</p></li>
 <li><p>需要分析代码解析依赖</p>
@@ -99,18 +99,18 @@ define(<span class="keyword">function</span>(){});
 
 <p>构建时提取的依赖是扁平化的，会提取该模块所有的依赖，这样可以先将依赖的所有模块提前下载下来。</p>
 <div class="highlight"><pre><code class="javascript"><span class="comment">// a.js</span>
-define(<span class="keyword">function</span>(require){
+define(<span class="function"><span class="keyword">function</span><span class="params">(require)</span>{</span>
   require(<span class="string">'./b'</span>);
 });
 <span class="comment">// b.js</span>
-define(<span class="keyword">function</span>(require){
+define(<span class="function"><span class="keyword">function</span><span class="params">(require)</span>{</span>
   require(<span class="string">'./c'</span>);
 });
 <span class="comment">// c.js</span>
-define(<span class="keyword">function</span>(){});
+define(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>});
 
 <span class="comment">// 生成的 a.js 会包含 b.js 和 c.js 的依赖</span>
-define(<span class="string">'a'</span>, [<span class="string">'./b'</span>, <span class="string">'./c'</span>], <span class="keyword">function</span>(require){
+define(<span class="string">'a'</span>, [<span class="string">'./b'</span>, <span class="string">'./c'</span>], <span class="function"><span class="keyword">function</span><span class="params">(require)</span>{</span>
   require(<span class="string">'./b'</span>);
 });
 </code></pre></div></li>
@@ -120,10 +120,10 @@ define(<span class="string">'a'</span>, [<span class="string">'./b'</span>, <spa
 <h2 id="id-规范">id 规范</h2>
 <p>Transport 后每个模块都有自己的标识，即为 id。id 是由 idleading（标准格式为 <code>family/name/version</code>） 和文件名组成的。以下示例的 id 为 <code>arale/base/1.0.0/base</code>。</p>
 <div class="highlight"><pre><code class="javascript"><span class="comment">// base.js</span>
-define(<span class="keyword">function</span>(){});
+define(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>});
 
 <span class="comment">// transport 后的 base.js</span>
-define(<span class="string">'arale/base/1.0.0/base'</span>, [<span class="string">'arale/class/1.0.0/class'</span>,<span class="string">'arale/events/1.0.0/events'</span>,<span class="string">'./aspect'</span>,<span class="string">'./attribute'</span>], <span class="keyword">function</span>(){});
+define(<span class="string">'arale/base/1.0.0/base'</span>, [<span class="string">'arale/class/1.0.0/class'</span>,<span class="string">'arale/events/1.0.0/events'</span>,<span class="string">'./aspect'</span>,<span class="string">'./attribute'</span>], <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>});
 </code></pre></div>
 <p>这个 id 规范会在多处使用</p>
 
@@ -149,7 +149,7 @@ define(<span class="string">'arale/base/1.0.0/base'</span>, [<span class="string
 </div>
     </div>
     <div class="footer">
-      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.4.7</p>
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.5.0</p>
     </div>
     <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../static/one.js"></script>
     <div id="extra">

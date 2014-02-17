@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="generator" content="nico 0.4.7">
+    <meta name="generator" content="nico 0.5.0">
     <meta name="theme" content="spm 0.1">
     <title>标准构建 - spm document</title>
     <link rel="stylesheet" href="../static/one.css" />
@@ -76,13 +76,13 @@
 </pre>
 <p>静态文件</p>
 <div class="highlight"><pre><code class="javascript"><span class="comment">// a.js</span>
-define(<span class="keyword">function</span>() {
+define(<span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
   require(<span class="string">'class'</span>);
   console.log(<span class="string">'a'</span>);
 });
 
 <span class="comment">// b.js</span>
-define(<span class="keyword">function</span>(require) {
+define(<span class="function"><span class="keyword">function</span><span class="params">(require)</span> {</span>
   require(<span class="string">'./a'</span>);
   console.log(<span class="string">'b'</span>);
 });
@@ -102,18 +102,18 @@ define(<span class="keyword">function</span>(require) {
 </code></pre></div>
 <p>运行 <code>spm build</code> 后会在 dist 目录生成4个文件（output 指定的两个文件以及对应的 -debug 文件）</p>
 <div class="highlight"><pre><code class="javascript"><span class="comment">// a-debug.js</span>
-define(<span class="string">"arale/test/1.0.0/a-debug"</span>, [ <span class="string">"arale/class/1.0.0/class-debug"</span> ], <span class="keyword">function</span>() {
+define(<span class="string">"arale/test/1.0.0/a-debug"</span>, [ <span class="string">"arale/class/1.0.0/class-debug"</span> ], <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
     require(<span class="string">"arale/class/1.0.0/class-debug"</span>);
     console.log(<span class="string">"a"</span>);
 });
 
 
 <span class="comment">// b-debug.js</span>
-define(<span class="string">"arale/test/1.0.0/b-debug"</span>, [ <span class="string">"./a-debug"</span>, <span class="string">"arale/class/1.0.0/class-debug"</span> ], <span class="keyword">function</span>(require) {
+define(<span class="string">"arale/test/1.0.0/b-debug"</span>, [ <span class="string">"./a-debug"</span>, <span class="string">"arale/class/1.0.0/class-debug"</span> ], <span class="function"><span class="keyword">function</span><span class="params">(require)</span> {</span>
     require(<span class="string">"./a-debug"</span>);
     console.log(<span class="string">"b"</span>);
 });
-define(<span class="string">"arale/test/1.0.0/a-debug"</span>, [ <span class="string">"arale/class/1.0.0/class-debug"</span> ], <span class="keyword">function</span>() {
+define(<span class="string">"arale/test/1.0.0/a-debug"</span>, [ <span class="string">"arale/class/1.0.0/class-debug"</span> ], <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
     require(<span class="string">"arale/class/1.0.0/class-debug"</span>);
     console.log(<span class="string">"a"</span>);
 });
@@ -155,17 +155,17 @@ require(<span class="string">'base'</span>) <span class="comment">//不会替换
 </code></pre></div><h3 id="output">output</h3>
 <p>通过 output 指定输出的文件，只有指定的文件才会输出到 dist 目录下</p>
 <div class="highlight"><pre><code class="javascript"><span class="comment">// a.js</span>
-define(<span class="keyword">function</span>(require) {
+define(<span class="function"><span class="keyword">function</span><span class="params">(require)</span> {</span>
     require(<span class="string">'./b'</span>)
 });
 
 <span class="comment">// b.js</span>
-define(<span class="keyword">function</span>(require) {
+define(<span class="function"><span class="keyword">function</span><span class="params">(require)</span> {</span>
     require(<span class="string">'./c'</span>)
 });
 
 <span class="comment">// c.js</span>
-define(<span class="keyword">function</span>(require) {
+define(<span class="function"><span class="keyword">function</span><span class="params">(require)</span> {</span>
 });
 </code></pre></div>
 <p>package.json</p>
@@ -176,7 +176,7 @@ define(<span class="keyword">function</span>(require) {
 <p>构建的时候会打包相对的模块，这是由 include 属性决定的，默认为 <code>&quot;include&quot;: &quot;relative&quot;</code></p>
 <div class="highlight"><pre><code class="javascript">require(<span class="string">'./b'</span>); <span class="xml"><span class="tag">&lt;<span class="title">=</span> 相对依赖，会打包进来
 <span class="attribute">require</span>('<span class="attribute">base</span>'); &lt;= 外部依赖，不会打包进来
-</span></code></pre></div>
+</span></span></code></pre></div>
 <p>如果想打包所有的依赖可以如下配置 package.json，会把外部依赖（包括依赖的依赖）也打包进文件。</p>
 <div class="highlight"><pre><code class="javascript"><span class="string">"spm"</span>: {
   <span class="string">"include"</span>: <span class="string">"all"</span>
@@ -197,7 +197,7 @@ define(<span class="keyword">function</span>(require) {
 </div>
     </div>
     <div class="footer">
-      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.4.7</p>
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.5.0</p>
     </div>
     <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../static/one.js"></script>
     <div id="extra">
